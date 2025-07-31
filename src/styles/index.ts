@@ -1,4 +1,4 @@
-import './global.less'
+import '../global/global.less'
 import { canUseDom } from '../utils/can-use-dom'
 
 if (canUseDom) {

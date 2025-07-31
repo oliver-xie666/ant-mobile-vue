@@ -58,6 +58,7 @@
   padding: 0;
 }
 
+/* stylelint-disable selector-pseudo-class-no-unknown */
 .code-content :deep(pre) {
   margin: 0;
   border-radius: 0;

@@ -1,0 +1,268 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+// 移动端全局样式 - 基于ant-design-mobile源项目适配VitePress
+
+// 移动端媒体查询
+@media screen and (width <= 450px) {
+  // 影响移动端所有页面
+  .vp-nav .vp-nav-bar {
+    padding: 0 58px;
+  }
+
+  // 隐藏搜索框
+  .vp-nav-search {
+    display: none;
+  }
+
+  // 移动端首页特殊样式
+  .VPHome {
+    // 导航栏样式
+    & + .vp-nav .vp-nav-bar {
+      position: sticky;
+      top: 0;
+      background-color: #1677ff;
+      opacity: 0.95;
+      box-shadow: 0 1px 1px 0 rgb(238 238 238 / 25%) !important;
+      border: none;
+    }
+
+    // 汉堡菜单按钮
+    & + .vp-nav .vp-nav-bar .vp-nav-bar-hamburger .vp-nav-bar-hamburger-icon {
+      width: 16px;
+      height: 16px;
+      background: url('https://gw.alipayobjects.com/zos/bmw-prod/2a780b32-f3dd-4e13-8c27-2369d898bd76.svg') no-repeat center / cover;
+    }
+
+    // 移动端菜单
+    & + .vp-nav .vp-nav-screen {
+      background-color: #1677ff;
+      opacity: 0.95;
+
+      .vp-nav-screen-menu {
+        border-bottom: none;
+
+        a {
+          color: #fff !important;
+        }
+      }
+
+      // 菜单关闭按钮
+      .vp-nav-screen-menu::after {
+        transform: scaleX(0.2);
+      }
+    }
+  }
+
+  // 内容区域移动端适配
+  .vp-doc {
+    padding: 16px;
+
+    .container {
+      max-width: 100%;
+      padding: 0;
+    }
+  }
+
+    // 侧边栏移动端样式
+  .vp-sidebar {
+    background-color: #fff;
+
+    &.open {
+      background-color: #1677ff;
+      opacity: 0.95;
+    }
+  }
+
+  .vp-sidebar.open .vp-sidebar-menu a {
+    color: #fff !important;
+  }
+
+  // 首页内容移动端适配
+  .homepage {
+    .hero {
+      padding: 40px 20px;
+
+      &-title {
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      &-description {
+        font-size: 16px;
+        margin-top: 16px;
+      }
+
+      &-actions {
+        margin-top: 24px;
+        flex-direction: column;
+        gap: 12px;
+
+        .btn {
+          width: 100%;
+          max-width: 280px;
+        }
+      }
+    }
+
+    .product-features {
+      padding: 40px 20px;
+
+      &-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      &-item {
+        text-align: center;
+        padding: 20px;
+
+        img {
+          height: 28px;
+        }
+
+        h3 {
+          font-size: 16px;
+          margin: 12px 0 8px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .design-language {
+      padding: 40px 20px;
+
+      &-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      &-image {
+        order: -1;
+        margin-bottom: 24px;
+
+        img {
+          max-width: 280px;
+        }
+      }
+
+      &-text {
+        h2 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .design-values {
+      padding: 40px 20px;
+
+      &-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      &-item {
+        padding: 16px;
+
+        h3 {
+          font-size: 14px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .guides {
+      padding: 40px 20px;
+
+      &-content {
+        text-align: center;
+      }
+
+      &-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      &-item {
+        padding: 16px;
+
+        h3 {
+          font-size: 14px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+
+
+  // 标签移动端适配
+  .tag {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+// 更小屏幕适配 (iPhone SE等)
+@media screen and (width <= 375px) {
+  .VPHome + .vp-nav .vp-nav-bar {
+    padding: 0 16px;
+  }
+
+  .homepage {
+    .hero {
+      padding: 32px 16px;
+
+      &-title {
+        font-size: 28px;
+      }
+
+      &-description {
+        font-size: 15px;
+      }
+    }
+
+    .product-features,
+    .design-language,
+    .design-values,
+    .guides {
+      padding: 32px 16px;
+    }
+
+    .design-values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// 横屏适配
+@media screen and (height <= 480px) and (orientation: landscape) {
+  .homepage .hero {
+    padding: 20px;
+
+    &-title {
+      font-size: 24px;
+    }
+
+    &-actions {
+      margin-top: 16px;
+      flex-direction: row;
+
+      .btn {
+        width: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+// PC端全局样式 - 基于ant-design-mobile源项目适配VitePress
+
+// 通用导航栏样式
+.vp-nav-bar {
+  height: 64px;
+  border-bottom: 1px solid #e6e6e6;
+
+  .vp-nav-bar-content {
+    height: 64px;
+  }
+
+  .vp-nav-bar-title .vp-nav-bar-title-text {
+    background-position-x: center !important;
+  }
+}
+
+// 搜索框样式
+.vp-nav-search .DocSearch-Button {
+  vertical-align: middle !important;
+}
+
+// 首页特殊样式 - 对应源项目的 data-route='/' 和 data-gapless='true'
+.VPHome {
+  // 导航栏透明样式
+  & + .vp-nav .vp-nav-bar {
+    position: absolute;
+    max-width: 1152px;
+    margin: 0 auto;
+    background-color: transparent;
+    border: none;
+
+    // 导航链接白色文字
+    .vp-nav-bar-menu .vp-nav-bar-menu-item > a {
+      color: #fff;
+
+      &:hover {
+        font-family: 'PingFang SC', sans-serif;
+        font-weight: 500;
+        line-height: 22px;
+        color: #fff !important;
+      }
+    }
+
+    // 悬停效果
+    .vp-nav-bar-menu .vp-nav-bar-menu-item:hover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -2px;
+      right: -2px;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 1px;
+    }
+  }
+
+  // Logo样式 - 首页使用白色logo
+  & + .vp-nav .vp-nav-bar .vp-nav-bar-title .logo {
+    height: 32px;
+    background-image: url('https://gw.alipayobjects.com/zos/bmw-prod/7c5fec71-34b2-4996-8384-89555714927c.svg') !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  // 搜索框首页样式
+  & + .vp-nav .vp-nav-search .DocSearch-Button {
+    border-radius: 8px !important;
+    color: #fff !important;
+    width: 200px;
+    height: 32px;
+    transition: none;
+    background: url('https://gw.alipayobjects.com/zos/bmw-prod/f4f3a6af-273c-4250-8cf3-f36e58448063.svg') no-repeat;
+    background-size: 100% 100%;
+    border: none;
+
+    .DocSearch-Button-Placeholder {
+      color: rgb(255 255 255 / 50%);
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// 导航栏菜单项通用样式
+.vp-nav-bar-menu .vp-nav-bar-menu-item {
+  position: relative;
+  margin-left: 32px;
+  display: inline-block;
+  height: 64px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 64px;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+
+// 隐藏一些VitePress默认元素
+.vp-nav-bar .vp-nav-bar-extra svg {
+  display: none;
+}
+
+// 确保导航栏高度一致
+
+
+// 内容区域样式
+.vp-doc .container {
+  max-width: 1152px;
+}
+
+// 侧边栏样式
+.vp-sidebar {
+  border-right: 1px solid #e6e6e6;
+}
+
+// 响应式处理 - 中等屏幕
+@media (width <= 960px) {
+  .VPHome + .vp-nav .vp-nav-bar {
+    max-width: 100%;
+    padding: 0 24px;
+  }
+}
+
+// 响应式处理 - 小屏幕
+@media (width <= 768px) {
+  .vp-nav-bar-menu .vp-nav-bar-menu-item {
+    margin-left: 16px;
+    font-size: 13px;
+  }
+
+  .VPHome + .vp-nav .vp-nav-search .DocSearch-Button {
+    width: 150px;
+    height: 28px;
+  }
+}
