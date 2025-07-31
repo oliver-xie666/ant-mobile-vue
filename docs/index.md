@@ -53,6 +53,35 @@ npm install ant-mobile-vue
 import { Button } from 'ant-mobile-vue'
 ```
 
+## 组件预览
+
+在这里你可以看到一些核心组件的实际效果：
+
+<DemoBlock>
+  <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+    <Button type="primary">主要按钮</Button>
+    <Button>默认按钮</Button>
+    <Button type="primary" size="small">小按钮</Button>
+    <Button loading>加载中</Button>
+  </div>
+</DemoBlock>
+
+<DemoBlock>
+  <div style="display: flex; gap: 12px; align-items: center;">
+    <DotLoading />
+    <span>加载中...</span>
+  </div>
+</DemoBlock>
+
+<DemoBlock>
+  <Space>
+    <Tag color="primary">主要标签</Tag>
+    <Tag color="success">成功标签</Tag>
+    <Tag color="warning">警告标签</Tag>
+    <Tag color="danger">危险标签</Tag>
+  </Space>
+</DemoBlock>
+
 ## 开发进度
 
 **✅ 基础设施**: 100% 完成  
@@ -60,6 +89,7 @@ import { Button } from 'ant-mobile-vue'
 - 开发工具链配置 ✅  
 - 样式系统 ✅  
 - 组件系统架构 ✅  
+- 文档系统 ✅  
 
 **✅ 已完成组件**: 5个  
 - Button 按钮  

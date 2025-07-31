@@ -12,6 +12,17 @@
 
 按钮有五种类型：主要按钮、默认按钮、成功按钮、警告按钮和危险按钮。
 
+<DemoBlock>
+  <Space direction="vertical" block>
+    <Button color="primary">主要按钮</Button>
+    <Button>默认按钮</Button>
+    <Button color="success">成功按钮</Button>
+    <Button color="warning">警告按钮</Button>
+    <Button color="danger">危险按钮</Button>
+  </Space>
+
+  <template #code>
+
 ```vue
 <template>
   <Space direction="vertical" block>
@@ -28,7 +39,19 @@ import { Button, Space } from 'ant-mobile-vue'
 </script>
 ```
 
+  </template>
+</DemoBlock>
+
 ### 填充模式
+
+<DemoBlock>
+  <Space direction="vertical" block>
+    <Button color="primary" fill="solid">实心按钮</Button>
+    <Button color="primary" fill="outline">线框按钮</Button>
+    <Button color="primary" fill="none">幽灵按钮</Button>
+  </Space>
+
+  <template #code>
 
 ```vue
 <template>
@@ -44,7 +67,20 @@ import { Button, Space } from 'ant-mobile-vue'
 </script>
 ```
 
+  </template>
+</DemoBlock>
+
 ### 按钮尺寸
+
+<DemoBlock>
+  <Space wrap>
+    <Button size="mini" color="primary">迷你</Button>
+    <Button size="small" color="primary">小号</Button>
+    <Button size="middle" color="primary">中号</Button>
+    <Button size="large" color="primary">大号</Button>
+  </Space>
+
+  <template #code>
 
 ```vue
 <template>
@@ -60,6 +96,9 @@ import { Button, Space } from 'ant-mobile-vue'
 import { Button, Space } from 'ant-mobile-vue'
 </script>
 ```
+
+  </template>
+</DemoBlock>
 
 ### 块级按钮
 
@@ -94,6 +133,23 @@ import { Button, Space } from 'ant-mobile-vue'
 
 ### 加载状态
 
+<DemoBlock>
+  <Space direction="vertical" block>
+    <Button loading color="primary">加载中</Button>
+    <Button loading loading-text="努力加载中..." color="primary">
+      加载中
+    </Button>
+    <Button 
+      :loading="loading" 
+      color="primary" 
+      @click="handleClick"
+    >
+      点击加载
+    </Button>
+  </Space>
+
+  <template #code>
+
 ```vue
 <template>
   <Space direction="vertical" block>
@@ -125,6 +181,22 @@ const handleClick = async () => {
 }
 </script>
 ```
+
+  </template>
+</DemoBlock>
+
+<script setup>
+import { ref } from 'vue'
+
+const loading = ref(false)
+
+const handleClick = async () => {
+  loading.value = true
+  // 模拟异步操作
+  await new Promise(resolve => setTimeout(resolve, 2000))
+  loading.value = false
+}
+</script>
 
 ### 按钮形状
 

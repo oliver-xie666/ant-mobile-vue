@@ -17,7 +17,7 @@ export default defineConfigWithVueTs(
     files: ['**/*.{ts,mts,tsx,vue}'],
   },
 
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**', 'docs/.vitepress/cache/**', 'docs/.vitepress/dist/**']),
 
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
@@ -27,6 +27,15 @@ export default defineConfigWithVueTs(
     files: ['**/*.vue'],
     rules: {
       'vue/multi-word-component-names': 'off', // 允许单词组件名，如 Button, Input 等
+    },
+  },
+
+  {
+    name: 'app/ts-rules',
+    files: ['**/*.ts'],
+    rules: {
+      'vue/multi-word-component-names': 'off',
+      'vue/no-reserved-component-names': 'off',
     },
   },
 
