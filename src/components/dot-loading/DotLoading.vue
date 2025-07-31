@@ -57,7 +57,7 @@ const colorRecord: Record<string, string> = {
   white: 'var(--adm-color-white)',
 }
 
-export interface DotLoadingProps extends NativeProps {
+export interface DotLoadingProps extends /* @vue-ignore */ NativeProps {
   color?: 'default' | 'primary' | 'white' | (string & {})
 }
 

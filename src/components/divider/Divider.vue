@@ -17,7 +17,7 @@ import type { NativeProps } from '../../utils/native-props'
 
 const classPrefix = 'adm-divider'
 
-export interface DividerProps extends NativeProps {
+export interface DividerProps extends /* @vue-ignore */ NativeProps {
   contentPosition?: 'left' | 'right' | 'center'
   direction?: 'horizontal' | 'vertical'
 }

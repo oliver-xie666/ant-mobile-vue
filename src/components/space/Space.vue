@@ -26,7 +26,7 @@ import type { NativeProps } from '../../utils/native-props'
 
 const classPrefix = 'adm-space'
 
-export interface SpaceProps extends NativeProps<'--gap' | '--gap-vertical' | '--gap-horizontal'> {
+export interface SpaceProps extends /* @vue-ignore */ NativeProps<'--gap' | '--gap-vertical' | '--gap-horizontal'> {
   direction?: 'horizontal' | 'vertical'
   align?: 'start' | 'end' | 'center' | 'baseline'
   justify?:

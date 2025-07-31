@@ -23,5 +23,6 @@ export default defineConfig({
         javascriptEnabled: true,
       },
     },
+    postcss: './postcss.config.js',
   },
 })

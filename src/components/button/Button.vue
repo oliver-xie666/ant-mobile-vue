@@ -30,13 +30,14 @@
 
 <script setup lang="ts">
 import { computed, ref, getCurrentInstance } from 'vue'
+import type { Component } from 'vue'
 import DotLoading from '../dot-loading'
 import type { NativeProps } from '../../utils/native-props'
 import { isPromise } from '../../utils/validate'
 
 const classPrefix = 'adm-button'
 
-export interface ButtonProps extends NativeProps<
+export interface ButtonProps extends /* @vue-ignore */ NativeProps<
   | '--text-color'
   | '--background-color'
   | '--border-radius'
@@ -50,16 +51,16 @@ export interface ButtonProps extends NativeProps<
   block?: boolean;
   loading?: boolean | 'auto';
   loadingText?: string;
-  loadingIcon?: component;
+  loadingIcon?: Component;
   disabled?: boolean;
   type?: 'submit' | 'reset' | 'button';
   shape?: 'default' | 'rounded' | 'rectangular';
   form?: string;
   id?: string;
-  onMouseDown?: (event: mouseevent) => void;
-  onMouseUp?: (event: mouseevent) => void;
-  onTouchStart?: (event: touchevent) => void;
-  onTouchEnd?: (event: touchevent) => void
+  onMouseDown?: (event: MouseEvent) => void;
+  onMouseUp?: (event: MouseEvent) => void;
+  onTouchStart?: (event: TouchEvent) => void;
+  onTouchEnd?: (event: TouchEvent) => void
 }
 
 const props = withDefaults(defineProps<ButtonProps>(), {

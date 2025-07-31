@@ -94,11 +94,12 @@
   - [x] 全局样式配置
   - [x] 组件样式管理规范
 
-### ⏳ 待完成
-- [ ] **样式工具** (优先级: 中)
-  - [ ] 配置 PostCSS 插件
-  - [ ] 添加 autoprefixer
-  - [ ] 配置 px2rem 或类似工具
+### ✅ 已完成
+- [x] **样式工具** ✅
+  - [x] PostCSS 插件配置
+  - [x] autoprefixer 自动添加浏览器前缀
+  - [x] postcss-px-to-viewport 移动端适配
+  - [x] .browserslistrc 浏览器兼容性配置
 
 ---
 

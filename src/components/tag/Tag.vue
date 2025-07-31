@@ -23,7 +23,7 @@ const colorRecord: Record<string, string> = {
   danger: 'var(--adm-color-danger, #ff3141)',
 }
 
-export interface TagProps extends NativeProps<
+export interface TagProps extends /* @vue-ignore */ NativeProps<
   '--border-color' | '--background-color' | '--text-color' | '--border-radius'
 > {
   color?:
@@ -38,13 +38,11 @@ export interface TagProps extends NativeProps<
   onClick?: (e: MouseEvent) => void
 }
 
-const defaultTagProps = {
-  color: 'default',
-  fill: 'solid',
+const props = withDefaults(defineProps<TagProps>(), {
+  color: 'default' as const,
+  fill: 'solid' as const,
   round: false,
-}
-
-const props = withDefaults(defineProps<TagProps>(), defaultTagProps)
+})
 
 const emit = defineEmits<{
   click: [event: MouseEvent]
