@@ -10,3 +10,6 @@ export type { DividerProps } from './divider'
 
 export { default as Space } from './space'
 export type { SpaceProps } from './space'
+
+export { default as Tag } from './tag'
+export type { TagProps } from './tag'

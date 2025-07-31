@@ -4,6 +4,7 @@ import Button from './components/button/Button.vue'
 import DotLoading from './components/dot-loading/DotLoading.vue'
 import Divider from './components/divider/Divider.vue'
 import Space from './components/space/Space.vue'
+import Tag from './components/tag/Tag.vue'
 
 const loading = ref(false)
 
@@ -167,6 +168,54 @@ const handleClick = () => {
           <Space block justify="between">
             <Button>左侧</Button>
             <Button color="primary">右侧</Button>
+          </Space>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Tag 标签</h2>
+      <div class="demo-group">
+        <div style="width: 100%;">
+          <h3>基础标签</h3>
+          <Space wrap>
+            <Tag>默认</Tag>
+            <Tag color="primary">主要</Tag>
+            <Tag color="success">成功</Tag>
+            <Tag color="warning">警告</Tag>
+            <Tag color="danger">危险</Tag>
+          </Space>
+
+          <h3>空心标签</h3>
+          <Space wrap>
+            <Tag fill="outline">默认</Tag>
+            <Tag color="primary" fill="outline">主要</Tag>
+            <Tag color="success" fill="outline">成功</Tag>
+            <Tag color="warning" fill="outline">警告</Tag>
+            <Tag color="danger" fill="outline">危险</Tag>
+          </Space>
+
+          <h3>圆角标签</h3>
+          <Space wrap>
+            <Tag round>圆角</Tag>
+            <Tag color="primary" round>主要</Tag>
+            <Tag color="success" round fill="outline">成功</Tag>
+            <Tag color="warning" round fill="outline">警告</Tag>
+          </Space>
+
+          <h3>自定义颜色</h3>
+          <Space wrap>
+            <Tag color="#87d068">#87d068</Tag>
+            <Tag color="#108ee9" fill="outline">#108ee9</Tag>
+            <Tag color="#2db7f5" round>#2db7f5</Tag>
+          </Space>
+
+          <h3>可点击标签</h3>
+          <Space wrap>
+            <Tag @click="() => console.log('点击了标签')" style="cursor: pointer;">点击我</Tag>
+            <Tag color="primary" @click="() => console.log('主要标签被点击')" style="cursor: pointer;">
+              主要标签
+            </Tag>
           </Space>
         </div>
       </div>
