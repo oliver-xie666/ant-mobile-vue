@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": false,
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "singleQuote": true,
+  "printWidth": 100,
+  "bracketSameLine": false,
+  "arrowParens": "avoid",
+  "proseWrap": "never",
+  "overrides": [
+    {
+      "files": ["*.md"],
+      "options": {
+        "embeddedLanguageFormatting": "off"
+      }
+    }
+  ]
+}
