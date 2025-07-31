@@ -19,7 +19,10 @@
     "lint:style": "echo \"Stylelint temporarily disabled\"",
     "lint": "run-s lint:*",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "pinia": "^3.0.3",
@@ -64,6 +67,7 @@
     "typescript": "~5.8.0",
     "vite": "npm:rolldown-vite@latest",
     "vite-plugin-vue-devtools": "^8.0.0",
+    "vitepress": "^1.6.3",
     "vitest": "^3.2.4",
     "vue-tsc": "^3.0.4"
   },
