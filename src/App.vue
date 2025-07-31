@@ -2,6 +2,8 @@
 import { ref } from 'vue'
 import Button from './components/button/Button.vue'
 import DotLoading from './components/dot-loading/DotLoading.vue'
+import Divider from './components/divider/Divider.vue'
+import Space from './components/space/Space.vue'
 
 const loading = ref(false)
 
@@ -96,6 +98,77 @@ const handleClick = () => {
         <DotLoading />
         <DotLoading color="primary" />
         <DotLoading color="white" style="background: #333; padding: 10px;" />
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Divider 分割线</h2>
+      <div class="demo-group">
+        <div style="width: 100%;">
+          <p>上方内容</p>
+          <Divider />
+          <p>下方内容</p>
+
+          <Divider>中间文字</Divider>
+
+          <Divider content-position="left">左侧文字</Divider>
+
+          <Divider content-position="right">右侧文字</Divider>
+
+          <p>行内分割：
+            <span>文字1</span>
+            <Divider direction="vertical" />
+            <span>文字2</span>
+            <Divider direction="vertical" />
+            <span>文字3</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Space 间距</h2>
+      <div class="demo-group">
+        <div style="width: 100%;">
+          <h3>水平间距</h3>
+          <Space>
+            <Button>按钮1</Button>
+            <Button color="primary">按钮2</Button>
+            <Button color="success">按钮3</Button>
+          </Space>
+
+          <h3>垂直间距</h3>
+          <Space direction="vertical">
+            <Button block>按钮1</Button>
+            <Button block color="primary">按钮2</Button>
+            <Button block color="success">按钮3</Button>
+          </Space>
+
+          <h3>对齐方式</h3>
+          <Space align="center">
+            <Button size="large">大按钮</Button>
+            <Button size="small">小按钮</Button>
+            <Button>默认按钮</Button>
+          </Space>
+
+          <h3>换行</h3>
+          <Space wrap style="--gap: 12px;">
+            <Button>按钮1</Button>
+            <Button>按钮2</Button>
+            <Button>按钮3</Button>
+            <Button>按钮4</Button>
+            <Button>按钮5</Button>
+            <Button>按钮6</Button>
+            <Button>按钮7</Button>
+            <Button>按钮8</Button>
+          </Space>
+
+          <h3>块级布局</h3>
+          <Space block justify="between">
+            <Button>左侧</Button>
+            <Button color="primary">右侧</Button>
+          </Space>
+        </div>
       </div>
     </section>
   </div>

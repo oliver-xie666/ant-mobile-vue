@@ -1,0 +1,88 @@
+<template>
+  <div
+    :class="classes"
+  >
+    <div
+      v-if="$slots.default"
+      :class="`${classPrefix}-content`"
+    >
+      <slot />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { computed } from 'vue'
+import type { NativeProps } from '../../utils/native-props'
+
+const classPrefix = 'adm-divider'
+
+export interface DividerProps extends NativeProps {
+  contentPosition?: 'left' | 'right' | 'center'
+  direction?: 'horizontal' | 'vertical'
+}
+
+const props = withDefaults(defineProps<DividerProps>(), {
+  contentPosition: 'center',
+  direction: 'horizontal',
+})
+
+const classes = computed(() => [
+  classPrefix,
+  `${classPrefix}-${props.direction}`,
+  `${classPrefix}-${props.contentPosition}`,
+  props.class,
+])
+</script>
+
+<style lang="less">
+@class-prefix-divider: ~'adm-divider';
+
+.@{class-prefix-divider} {
+}
+
+.adm-divider-horizontal {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+  border-width: 0;
+  border-color: var(--adm-color-border);
+  border-style: solid;
+  color: var(--adm-color-weak);
+  font-size: 14px;
+
+  .adm-divider-left&::before {
+    max-width: 10%;
+  }
+
+  .adm-divider-right&::after {
+    max-width: 10%;
+  }
+
+  &::after,
+  &::before {
+    flex: auto;
+    display: block;
+    content: '';
+    border-style: inherit;
+    border-color: inherit;
+    border-width: 1px 0 0;
+  }
+
+  .adm-divider-content {
+    flex: none;
+    padding: 0 16px;
+  }
+}
+
+.adm-divider-vertical {
+  position: relative;
+  top: -0.06em;
+  display: inline-block;
+  height: 0.9em;
+  margin: 0 16px;
+  vertical-align: middle;
+  border-top: 0;
+  border-left: 1px solid var(--adm-color-border);
+}
+</style>
