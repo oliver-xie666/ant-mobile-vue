@@ -4,18 +4,18 @@
     <div class="hero-section">
       <div class="hero-container">
         <div class="hero-content">
-          <h1 class="hero-title">{{ heroConfig.title }}</h1>
-          <p class="hero-description">{{ heroConfig.description }}</p>
+          <h1 class="hero-title">{{ currentHeroConfig.title }}</h1>
+          <p class="hero-description">{{ currentHeroConfig.description }}</p>
           <div class="hero-actions">
             <a
-              v-for="action in heroConfig.actions"
+              v-for="action in currentHeroConfig.actions"
               :key="action.text"
               :href="action.link"
             >
               <Button
                 :color="action.type"
                 shape="rounded"
-                :class="action === heroConfig.actions[0] ? 'btn-left' : 'btn-right'"
+                :class="action === currentHeroConfig.actions[0] ? 'btn-left' : 'btn-right'"
               >
                 {{ action.text }}
               </Button>
@@ -26,8 +26,8 @@
           <div class="phone-container">
             <img
               class="phone-image"
-              :src="heroConfig.phone.image"
-              :alt="heroConfig.phone.alt"
+              :src="currentHeroConfig.phone.image"
+              :alt="currentHeroConfig.phone.alt"
             />
             <!-- 手机屏幕内的装饰元素 -->
             <div class="phone-decorations">
@@ -45,7 +45,7 @@
       <div class="container">
         <div class="product-grid">
           <div
-            v-for="feature in productIntroduce"
+            v-for="feature in currentProductIntroduce"
             :key="feature.title"
             class="product-item"
           >
@@ -62,7 +62,7 @@
       <div class="container">
         <div class="resource-grid">
           <div
-            v-for="resource in getProductResource(isWideScreen, false)"
+            v-for="resource in getProductResource(isWideScreen, isEnglish)"
             :key="resource.title"
             class="resource-card"
           >
@@ -95,7 +95,7 @@
     <div class="design-values">
       <div class="container">
         <div
-          v-for="designValue in productDesignValues"
+          v-for="designValue in currentProductDesignValues"
           :key="designValue.title"
           class="design-value-section"
         >
@@ -125,7 +125,7 @@
       <div class="container">
         <div class="guides-grid">
           <div
-            v-for="guide in getGuides(isWideScreen, false)"
+            v-for="guide in getGuides(isWideScreen, isEnglish)"
             :key="guide.title"
             class="guide-card"
           >
@@ -151,10 +151,10 @@
     <!-- Recommendations -->
     <div class="recommendations">
       <div class="container">
-        <h2>相关资源</h2>
+        <h2>{{ isEnglish ? 'Resources' : '精品资源' }}</h2>
         <div class="recommend-grid">
           <div
-            v-for="recommend in getRecommends(false)"
+            v-for="recommend in getRecommends(isEnglish)"
             :key="recommend.title"
             class="recommend-card"
           >
@@ -173,7 +173,7 @@
     <!-- Users -->
     <div class="users-section">
       <div class="container">
-        <h2>谁在使用</h2>
+        <h2>{{ isEnglish ? 'Who is using' : '谁在使用' }}</h2>
         <div class="users-grid">
           <a
             v-for="user in users"
@@ -191,19 +191,39 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
+import { useData } from 'vitepress'
 import { Button } from '@/components'
 import {
   productIntroduce,
+  productIntroduceEn,
   getProductResource,
   productDesignValues,
+  productDesignValuesEn,
   getGuides,
   getRecommends,
   users,
   heroConfig,
+  heroConfigEn,
 } from './config'
 
+const { lang } = useData()
 const isWideScreen = ref(true)
+
+// 根据语言选择配置
+const currentHeroConfig = computed(() => {
+  return lang.value === 'en-US' ? heroConfigEn : heroConfig
+})
+
+const currentProductIntroduce = computed(() => {
+  return lang.value === 'en-US' ? productIntroduceEn : productIntroduce
+})
+
+const currentProductDesignValues = computed(() => {
+  return lang.value === 'en-US' ? productDesignValuesEn : productDesignValues
+})
+
+const isEnglish = computed(() => lang.value === 'en-US')
 
 onMounted(() => {
   const updateScreenSize = () => {

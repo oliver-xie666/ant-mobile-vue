@@ -15,13 +15,20 @@
 
 // Hero Section
 .hero-section {
-  background: linear-gradient(135deg, rgb(22 119 255 / 5%), rgb(22 119 255 / 1%));
-  padding: 80px 0 120px;
+  height: 594px;
+  background: url('https://gw.alipayobjects.com/zos/bmw-prod/756d63e6-4f1d-48e9-8c7f-7b4c0cbc1bb0.svg') no-repeat;
+  background-size: cover;
+  margin-top: -64px;
+  padding-top: 64px;
+  display: flex;
+  align-items: center;
   position: relative;
   overflow: hidden;
 
   @media (width <= 768px) {
-    padding: 60px 0 80px;
+    height: 512px;
+    padding-top: 56px;
+    margin-top: -56px;
   }
 }
 
@@ -47,30 +54,38 @@
 
 .hero-content {
   flex: 1;
-  max-width: 500px;
+  max-width: 600px;
 
   @media (width <= 1024px) {
-    max-width: 600px;
+    max-width: 700px;
   }
 }
 
 .hero-title {
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 44px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   margin: 0 0 24px;
-  color: var(--adm-color-text);
+  color: #fff;
+  white-space: nowrap;
 
   @media (width <= 768px) {
-    font-size: 36px;
+    font-size: 38px;
     margin: 0 0 16px;
+    white-space: normal;
+  }
+
+  @media (width <= 450px) {
+    font-size: 32px;
   }
 }
 
 .hero-description {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--adm-color-text-secondary);
+  font-family: PingFangSC-Light, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  color: #fff;
   margin: 0 0 32px;
 
   @media (width <= 768px) {
@@ -90,6 +105,18 @@
 
   a {
     text-decoration: none;
+  }
+
+  .btn-left {
+    --background-color: #0170fe;
+    --border-color: #0170fe;
+  }
+
+  .btn-right {
+    --background-color: #4ba6ff;
+    --border-color: #fff;
+
+    margin-left: 16px;
   }
 
   .btn-left,
@@ -181,46 +208,57 @@
 
 // Product Introduction
 .product-introduce {
-  padding: 80px 0;
-  background: var(--adm-color-background);
+  position: relative;
+  top: -100px;
+  max-width: 1184px;
+  margin: 0 auto;
+  padding: 0 16px;
 
   @media (width <= 768px) {
-    padding: 60px 0;
+    top: -60px;
   }
 }
 
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  box-sizing: border-box;
+  min-height: 200px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 12px 28px 0 rgb(113 142 204 / 10%);
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0 32px 32px;
 
   @media (width <= 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    padding: 0 16px 24px;
   }
 }
 
 .product-item {
+  width: 210px;
   text-align: center;
-  padding: 24px;
+  margin-top: 32px;
 
   img {
     width: 32px;
     height: 32px;
-    margin-bottom: 16px;
   }
 
   &-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: var(--adm-color-text);
+    color: rgb(0 0 0 / 85%);
+    margin-top: 24px;
+    font-family: PingFangSC-Medium, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   &-description {
     font-size: 14px;
-    line-height: 1.6;
-    color: var(--adm-color-text-secondary);
+    color: #697a8c;
+    line-height: 24px;
+    margin-top: 8px;
   }
 }
 
@@ -497,153 +535,109 @@
 
 // Recommendations
 .recommendations {
-  padding: 80px 0;
-  background: var(--adm-color-background);
-
-  @media (width <= 768px) {
-    padding: 60px 0;
-  }
+  margin-top: 80px;
 
   h2 {
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    margin: 0 0 48px;
-    color: var(--adm-color-text);
-
-    @media (width <= 768px) {
-      font-size: 28px;
-      margin: 0 0 32px;
-    }
+    font-family: PingFangSC-Light, Arial, sans-serif;
+    font-size: 24px;
+    color: #697a8c;
+    line-height: 32px;
+    margin-bottom: 32px;
   }
 }
 
 .recommend-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-
-  @media (width <= 768px) {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: url('https://gw.alipayobjects.com/mdn/rms_226d75/afts/img/A*4LddRq0XO8sAAAAAAAAAAAAAARQnAQ') no-repeat;
+  background-size: cover;
 }
 
 .recommend-card {
-  background: var(--adm-color-white);
+  width: 368px;
+  height: 146px;
   border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
-  transition: all 0.3s;
+  box-shadow: 0 12px 28px 0 rgb(113 142 204 / 10%);
+  margin-top: 32px;
+  padding: 12px 24px;
+  background: var(--adm-color-white);
 
   &:hover {
-    box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
-    transform: translateY(-2px);
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+    transition: box-shadow 0.3s, border-color 0.3s;
   }
 
   a {
     display: flex;
     align-items: center;
-    gap: 16px;
     text-decoration: none;
     color: inherit;
+    height: 100%;
   }
 
   img {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
+    width: 50px;
+    margin: 0 25px;
   }
 
   @media (width <= 768px) {
-    padding: 20px;
+    width: 100% !important;
   }
 }
 
 .recommend-info {
+  width: 196px;
+
   h4 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0 0 8px;
-    color: var(--adm-color-text);
+    font-family: PingFangSC-Medium, Arial, sans-serif;
+    font-size: 24px;
+    color: rgb(0 0 0 / 85%);
+    margin: 0;
   }
 
   p {
+    color: rgb(0 0 0 / 65%);
+    line-height: 20px;
+    margin-top: 8px;
     font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-    color: var(--adm-color-text-secondary);
   }
 }
 
 // Users
 .users-section {
-  padding: 80px 0;
-  background: var(--adm-color-box);
-
-  @media (width <= 768px) {
-    padding: 60px 0;
-  }
+  margin-top: 80px;
 
   h2 {
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    margin: 0 0 48px;
-    color: var(--adm-color-text);
-
-    @media (width <= 768px) {
-      font-size: 28px;
-      margin: 0 0 32px;
-    }
+    font-family: PingFangSC-Light, Arial, sans-serif;
+    font-size: 24px;
+    color: #697a8c;
+    line-height: 32px;
+    margin-bottom: 32px;
   }
 }
 
 .users-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 32px;
-  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
   @media (width <= 768px) {
-    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
 
   @media (width <= 450px) {
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 }
 
 .user-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: var(--adm-color-white);
-  border-radius: 12px;
-  transition: all 0.3s;
-  min-height: 80px;
-
-  &:hover {
-    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
-    transform: translateY(-2px);
-  }
-
   img {
-    max-width: 100%;
-    max-height: 40px;
-    width: auto;
-    height: auto;
-  }
+    width: 120px;
 
-  @media (width <= 768px) {
-    padding: 16px;
-    min-height: 60px;
-
-    img {
-      max-height: 32px;
+    @media (width <= 450px) {
+      width: 80px;
     }
   }
 }

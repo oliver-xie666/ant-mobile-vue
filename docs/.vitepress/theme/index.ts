@@ -15,27 +15,29 @@ import '../../../src/styles/index.ts'
 import './styles/docs-vars.less'
 import './styles/globalPC.less'
 import './styles/globalMobile.less'
+import './styles/override.less'
 
 // 创建演示组件包装器
 import DemoBlock from './components/DemoBlock.vue'
 import HomePage from './components/HomePage.vue'
-import IconDemoAll from '../../components/icon/IconDemoAll.vue'
-import IconDemoSingle from '../../components/icon/IconDemoSingle.vue'
+import IconDemoAll from '../../zh/components/icon/IconDemoAll.vue'
+import IconDemoSingle from '../../zh/components/icon/IconDemoSingle.vue'
 import Navbar from './components/Navbar.vue'
 import Main from './components/Main.vue'
 import Footer from './components/Footer.vue'
+import PageLayout from './components/PageLayout.vue'
 
 export default {
   extends: DefaultTheme,
   Layout() {
     // 检查是否是首页
     const route = useRoute()
-    if (route.path === '/') {
+    if (route.path === '/' || route.path === '/zh/' || route.path === '/en/' || route.path === '/zh' || route.path === '/en') {
       return h(HomePage)
     }
-    // 其他页面使用默认布局
-    return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
+    // 其他页面使用带导航栏的页面布局
+    return h(PageLayout, null, {
+      default: () => h(DefaultTheme.Layout)
     })
   },
   enhanceApp({ app, router, siteData }) {
@@ -50,6 +52,7 @@ export default {
     app.component('Navbar', Navbar)
     app.component('Main', Main)
     app.component('Footer', Footer)
+    app.component('PageLayout', PageLayout)
     app.component('IconDemoAll', IconDemoAll)
     app.component('IconDemoSingle', IconDemoSingle)
   }

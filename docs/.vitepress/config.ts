@@ -10,65 +10,69 @@ export default defineConfig({
     }
   },
 
+  // 重定向配置
+  rewrites: {
+    'index.md': 'zh/index.md'
+  },
+
+  // 默认语言重定向
+  lang: 'zh-CN',
+
   // 多语言配置
   locales: {
-    root: {
+    zh: {
       label: '中文',
       lang: 'zh-CN',
       title: 'Ant Mobile Vue',
       description: '基于 Vue 3 的移动端组件库，像素级还原 Ant Design Mobile',
       themeConfig: {
-        nav: [
-          { text: '指南', link: '/guide/introduction' },
-          { text: '组件', link: '/components/button' },
-          { text: 'GitHub', link: 'https://github.com/oliver-xie666/ant-mobile-vue' }
-        ],
+        // 禁用默认导航栏
         sidebar: {
-          '/guide/': [
+          '/zh/guide/': [
             {
               text: '开始使用',
               items: [
-                { text: '介绍', link: '/guide/introduction' },
-                { text: '快速开始', link: '/guide/quick-start' },
-                { text: '主题定制', link: '/guide/theming' },
-                { text: 'CSS 变量', link: '/guide/css-variables' },
-                { text: '国际化', link: '/guide/i18n' }
+                { text: '介绍', link: '/zh/guide/introduction' },
+                { text: '快速开始', link: '/zh/guide/quick-start' },
+                { text: '主题定制', link: '/zh/guide/theming' },
+                { text: 'CSS 变量', link: '/zh/guide/css-variables' },
+                { text: '国际化', link: '/zh/guide/i18n' }
               ]
             },
             {
               text: '进阶指南',
               items: [
-                { text: '常见问题', link: '/guide/faq' },
-                { text: '迁移指南', link: '/guide/migration' },
-                { text: '按需引入', link: '/guide/import-on-demand' }
+                { text: '常见问题', link: '/zh/guide/faq' },
+                { text: '迁移指南', link: '/zh/guide/migration' },
+                { text: '按需引入', link: '/zh/guide/import-on-demand' }
               ]
             }
           ],
-          '/components/': [
+          '/zh/components/': [
             {
               text: '通用',
               items: [
-                { text: 'Button 按钮', link: '/components/button' },
-                { text: 'Icon 图标', link: '/components/icon/' }
+                { text: 'Button 按钮', link: '/zh/components/button' },
+                { text: 'Icon 图标', link: '/zh/components/icon/' }
               ]
             },
             {
               text: '布局',
               items: [
-                { text: 'Space 间距', link: '/components/space' },
-                { text: 'Divider 分割线', link: '/components/divider' }
+                { text: 'Space 间距', link: '/zh/components/space' },
+                { text: 'Divider 分割线', link: '/zh/components/divider' }
               ]
             },
             {
               text: '反馈',
               items: [
-                { text: 'DotLoading 点状加载', link: '/components/dot-loading' }
+                { text: 'DotLoading 点状加载', link: '/zh/components/dot-loading' }
               ]
             },
             {
               text: '数据展示',
               items: [
-                { text: 'Tag 标签', link: '/components/tag' }
+                { text: 'Tag 标签', link: '/zh/components/tag' }
               ]
             }
           ]
@@ -96,11 +100,7 @@ export default defineConfig({
       title: 'Ant Mobile Vue',
       description: 'Essential UI components for Vue 3 mobile applications',
       themeConfig: {
-        nav: [
-          { text: 'Guide', link: '/en/guide/introduction' },
-          { text: 'Components', link: '/en/components/button' },
-          { text: 'GitHub', link: 'https://github.com/oliver-xie666/ant-mobile-vue' }
-        ],
+        // 禁用默认导航栏
         sidebar: {
           '/en/guide/': [
             {

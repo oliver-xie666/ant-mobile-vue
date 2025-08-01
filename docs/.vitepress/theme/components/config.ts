@@ -184,36 +184,41 @@ export const getRecommends = (en: boolean) => [
 export const users = [
   {
     name: '支付宝',
-    image: 'https://gw.alipayobjects.com/zos/bmw-prod/9c62c53a-67e6-45e1-8ecf-d5edb84c97f6.svg',
-    href: 'https://render.alipay.com/p/yuyan/180020010001196791/preview.html?previewToken=e81b793b9e7b4a7f8c5de18bb597e3d9',
+    image: 'https://gw.alipayobjects.com/zos/bmw-prod/db2cc1f4-7c9a-4412-9117-0fe487272208.svg',
+  },
+  {
+    name: '口碑',
+    image: 'https://gw.alipayobjects.com/zos/bmw-prod/31acafc2-d143-4849-a3ae-87417d788890.svg',
   },
   {
     name: '网商银行',
-    image: 'https://gw.alipayobjects.com/zos/bmw-prod/42db77ca-db22-4e70-9d6a-dd55096b3088.svg',
-    href: 'https://fil.mybank.cn/fil/app/',
+    image: 'https://gw.alipayobjects.com/zos/bmw-prod/9991fbe9-d6bf-405d-9584-55f337396e18.svg',
+  },
+  {
+    name: '菜鸟',
+    image: 'https://gw.alipayobjects.com/zos/bmw-prod/40b66fe4-effc-41c3-8c8b-a1815ba6bd40.svg',
+  },
+  {
+    name: '淘宝网',
+    image: 'https://gw.alipayobjects.com/zos/bmw-prod/95224581-ffe0-44b5-ad70-d4c44ff14d0f.svg',
   },
   {
     name: '蚂蚁财富',
-    image: 'https://gw.alipayobjects.com/zos/bmw-prod/96d63de8-3b5e-4f89-9e14-51a0c35fe50b.svg',
+    image: 'https://gw.alipayobjects.com/zos/bmw-prod/c8eac91e-b243-409e-8d30-3edcde6236c9.svg',
   },
   {
-    name: '蚂蚁保险',
-    image: 'https://gw.alipayobjects.com/zos/bmw-prod/e72a6b0b-aa26-49a9-9e09-cb8e6074fb7e.svg',
+    name: '阿里云',
+    image: 'https://gw.alipayobjects.com/zos/bmw-prod/2683fc4d-8914-49f7-9453-61fc71395d03.svg',
   },
   {
-    name: '掌上英雄联盟',
-    image: 'https://gw.alipayobjects.com/zos/bmw-prod/3ed6b03b-abb6-4ad8-bfc3-f7badb4c4f2c.svg',
-  },
-  {
-    name: '语雀',
-    image: 'https://gw.alipayobjects.com/zos/bmw-prod/78be83e9-3fa6-48b1-9e97-3c23b7b60dd9.svg',
-    href: 'https://www.yuque.com/',
+    name: '蚂蚁链',
+    image: 'https://gw.alipayobjects.com/zos/bmw-prod/759ac1ec-59e8-4f99-b725-8eea69cc740d.svg',
   },
 ]
 
 export const navbarConfig = {
   logo: {
-    image: 'https://gw.alipayobjects.com/zos/bmw-prod/b2c7ff8b-eba0-4af9-9dd5-0b5b17f42c57.svg',
+    image: 'https://gw.alipayobjects.com/zos/bmw-prod/b874caa9-4458-412a-9ac6-a61486180a62.svg',
     title: 'Ant Mobile Vue',
     version: 'v0.0.1',
   },
@@ -223,8 +228,9 @@ export const navbarConfig = {
   nav: [
     { text: '指南', link: '/guide/introduction' },
     { text: '组件', link: '/components/button' },
+    { text: '资源', link: '/resources' },
+    { text: '发布日志', link: 'https://github.com/oliver-xie666/ant-mobile-vue/releases', target: '_blank' },
     { text: 'GitHub', link: 'https://github.com/oliver-xie666/ant-mobile-vue', target: '_blank' },
-    { text: 'English', link: '/guide/quick-start' },
   ],
 }
 
@@ -252,4 +258,147 @@ export const heroConfigEn = {
     image: 'https://gw.alipayobjects.com/mdn/rms_226d75/afts/img/A*kQ_zRK8YuGoAAAAAAAAAAAAAARQnAQ',
     alt: 'Phone Demo',
   },
+}
+
+// 页脚配置
+export const footerConfig = {
+  sections: [
+    {
+      title: '相关资源',
+      links: [
+        { text: 'Ant Design Charts', href: 'https://charts.ant.design', target: '_blank' },
+        { text: 'Ant Design Pro', href: 'https://pro.ant.design', target: '_blank' },
+        { text: 'Ant Design Pro Components', href: 'https://procomponents.ant.design', target: '_blank' },
+        { text: 'Ant Design Mini', href: 'https://mini.ant.design', target: '_blank' },
+        { text: 'Ant Design Landing', href: 'https://landing.ant.design', target: '_blank', desc: '首页模板集' },
+        { text: 'Scaffolds', href: 'https://scaffold.ant.design', target: '_blank', desc: '脚手架市场' },
+        { text: 'Umi', href: 'https://umijs.org', target: '_blank', desc: 'React 应用开发框架' },
+        { text: 'Dumi', href: 'https://d.umijs.org', target: '_blank', desc: '组件/文档研发工具' },
+        { text: 'qiankun', href: 'https://qiankun.umijs.org', target: '_blank', desc: '微前端框架' },
+        { text: 'ahooks', href: 'https://github.com/alibaba/hooks', target: '_blank', desc: 'React Hooks 库' },
+        { text: 'Ant Motion', href: 'https://motion.ant.design', target: '_blank', desc: '设计动效' },
+      ]
+    },
+    {
+      title: '社区',
+      links: [
+        { text: 'GitHub Discussions', href: 'https://github.com/ant-design/ant-design-mobile/discussions', target: '_blank' },
+        { text: 'Gitter', href: 'https://gitter.im/ant-design/ant-design-mobile', target: '_blank' },
+        { text: 'Twitter', href: 'https://twitter.com/antdesignui', target: '_blank' },
+        { text: '知乎专栏', href: 'https://www.zhihu.com/column/antdesign', target: '_blank' },
+        { text: '官方博客', href: 'https://zhuanlan.zhihu.com/p/148675163', target: '_blank' },
+      ]
+    },
+    {
+      title: '帮助',
+      links: [
+        { text: '组件总览', href: '/zh/guide/introduction' },
+        { text: '快速上手', href: '/zh/guide/quick-start' },
+        { text: '常见问题', href: '/zh/guide/faq' },
+        { text: 'GitHub Issues', href: 'https://github.com/oliver-xie666/ant-mobile-vue/issues', target: '_blank' },
+        { text: '迁移指南', href: '/zh/guide/migration' },
+        { text: '更新日志', href: 'https://github.com/oliver-xie666/ant-mobile-vue/releases', target: '_blank' },
+      ]
+    },
+    {
+      title: '更多产品',
+      links: [
+        { text: 'Ant Design', href: 'https://ant.design', target: '_blank' },
+        { text: 'Ant Design Mobile', href: 'https://mobile.ant.design', target: '_blank' },
+        { text: 'AntV', href: 'https://antv.vision', target: '_blank' },
+        { text: 'Kitchen', href: 'https://kitchen.alipay.com', target: '_blank' },
+        { text: '语雀', href: 'https://yuque.com', target: '_blank' },
+      ]
+    }
+  ],
+  copyright: {
+    text: '© 2025 Ant Mobile Vue. 基于',
+    linkText: 'Ant Design Mobile',
+    linkHref: 'https://mobile.ant.design',
+    description: '使用 Vue 3 技术栈重构的移动端组件库'
+  },
+  tech: {
+    prefix: 'Built with',
+    links: [
+      { text: 'Vue 3', href: 'https://vuejs.org', target: '_blank' },
+      { text: 'Vite', href: 'https://vitejs.dev', target: '_blank' },
+      { text: 'VitePress', href: 'https://vitepress.dev', target: '_blank' }
+    ]
+  },
+  madeBy: {
+    text: 'Made with ❤️ by',
+    author: 'oliver-xie666',
+    authorHref: 'https://github.com/oliver-xie666'
+  }
+}
+
+export const footerConfigEn = {
+  sections: [
+    {
+      title: 'Related Resources',
+      links: [
+        { text: 'Ant Design Charts', href: 'https://charts.ant.design', target: '_blank' },
+        { text: 'Ant Design Pro', href: 'https://pro.ant.design', target: '_blank' },
+        { text: 'Ant Design Pro Components', href: 'https://procomponents.ant.design', target: '_blank' },
+        { text: 'Ant Design Mini', href: 'https://mini.ant.design', target: '_blank' },
+        { text: 'Ant Design Landing', href: 'https://landing.ant.design', target: '_blank', desc: 'Homepage Templates' },
+        { text: 'Scaffolds', href: 'https://scaffold.ant.design', target: '_blank', desc: 'Scaffold Market' },
+        { text: 'Umi', href: 'https://umijs.org', target: '_blank', desc: 'React Development Framework' },
+        { text: 'Dumi', href: 'https://d.umijs.org', target: '_blank', desc: 'Component/Documentation Tool' },
+        { text: 'qiankun', href: 'https://qiankun.umijs.org', target: '_blank', desc: 'Micro Frontend Framework' },
+        { text: 'ahooks', href: 'https://github.com/alibaba/hooks', target: '_blank', desc: 'React Hooks Library' },
+        { text: 'Ant Motion', href: 'https://motion.ant.design', target: '_blank', desc: 'Design Motion' },
+      ]
+    },
+    {
+      title: 'Community',
+      links: [
+        { text: 'GitHub Discussions', href: 'https://github.com/ant-design/ant-design-mobile/discussions', target: '_blank' },
+        { text: 'Gitter', href: 'https://gitter.im/ant-design/ant-design-mobile', target: '_blank' },
+        { text: 'Twitter', href: 'https://twitter.com/antdesignui', target: '_blank' },
+        { text: 'Zhihu Column', href: 'https://www.zhihu.com/column/antdesign', target: '_blank' },
+        { text: 'Official Blog', href: 'https://zhuanlan.zhihu.com/p/148675163', target: '_blank' },
+      ]
+    },
+    {
+      title: 'Help',
+      links: [
+        { text: 'Components Overview', href: '/en/guide/introduction' },
+        { text: 'Quick Start', href: '/en/guide/quick-start' },
+        { text: 'FAQ', href: '/en/guide/faq' },
+        { text: 'GitHub Issues', href: 'https://github.com/oliver-xie666/ant-mobile-vue/issues', target: '_blank' },
+        { text: 'Migration Guide', href: '/en/guide/migration' },
+        { text: 'Changelog', href: 'https://github.com/oliver-xie666/ant-mobile-vue/releases', target: '_blank' },
+      ]
+    },
+    {
+      title: 'More Products',
+      links: [
+        { text: 'Ant Design', href: 'https://ant.design', target: '_blank' },
+        { text: 'Ant Design Mobile', href: 'https://mobile.ant.design', target: '_blank' },
+        { text: 'AntV', href: 'https://antv.vision', target: '_blank' },
+        { text: 'Kitchen', href: 'https://kitchen.alipay.com', target: '_blank' },
+        { text: 'Yuque', href: 'https://yuque.com', target: '_blank' },
+      ]
+    }
+  ],
+  copyright: {
+    text: '© 2025 Ant Mobile Vue. Based on',
+    linkText: 'Ant Design Mobile',
+    linkHref: 'https://mobile.ant.design',
+    description: 'Mobile UI component library built with Vue 3'
+  },
+  tech: {
+    prefix: 'Built with',
+    links: [
+      { text: 'Vue 3', href: 'https://vuejs.org', target: '_blank' },
+      { text: 'Vite', href: 'https://vitejs.dev', target: '_blank' },
+      { text: 'VitePress', href: 'https://vitepress.dev', target: '_blank' }
+    ]
+  },
+  madeBy: {
+    text: 'Made with ❤️ by',
+    author: 'oliver-xie666',
+    authorHref: 'https://github.com/oliver-xie666'
+  }
 }

@@ -1,0 +1,22 @@
+/* 隐藏VitePress默认导航栏 */
+.VPNav {
+  display: none !important;
+}
+
+/* 确保内容区域不被遮挡 */
+.VPContent {
+  padding-top: 0 !important;
+}
+
+/* 修复侧边栏样式 */
+.VPSidebar {
+  top: 64px !important; /* 导航栏高度 */
+  height: calc(100vh - 64px) !important;
+}
+
+@media (width <= 768px) {
+  .VPSidebar {
+    top: 56px !important; /* 移动端导航栏高度 */
+    height: calc(100vh - 56px) !important;
+  }
+}

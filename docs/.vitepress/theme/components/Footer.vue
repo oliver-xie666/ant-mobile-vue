@@ -2,93 +2,22 @@
   <footer class="footer-container">
     <div class="footer-content">
       <div class="footer-sections">
-        <!-- 相关资源 -->
-        <div class="footer-section">
-          <h4>相关资源</h4>
+        <div
+          v-for="section in currentFooterConfig.sections"
+          :key="section.title"
+          class="footer-section"
+        >
+          <h4>{{ section.title }}</h4>
           <div class="footer-links">
-            <a href="https://charts.ant.design" target="_blank">Ant Design Charts</a>
-            <a href="https://pro.ant.design" target="_blank">Ant Design Pro</a>
-            <a href="https://procomponents.ant.design" target="_blank">Ant Design Pro Components</a>
-            <a href="https://mini.ant.design" target="_blank">Ant Design Mini</a>
-            <a href="https://landing.ant.design" target="_blank">
-              Ant Design Landing
-              <span class="link-desc">首页模板集</span>
+            <a
+              v-for="link in section.links"
+              :key="link.text"
+              :href="link.href"
+              :target="link.target || '_self'"
+            >
+              {{ link.text }}
+              <span v-if="link.desc" class="link-desc">{{ link.desc }}</span>
             </a>
-            <a href="https://scaffold.ant.design" target="_blank">
-              Scaffolds
-              <span class="link-desc">脚手架市场</span>
-            </a>
-            <a href="https://umijs.org" target="_blank">
-              Umi
-              <span class="link-desc">React 应用开发框架</span>
-            </a>
-            <a href="https://d.umijs.org" target="_blank">
-              Dumi
-              <span class="link-desc">组件/文档研发工具</span>
-            </a>
-            <a href="https://qiankun.umijs.org" target="_blank">
-              qiankun
-              <span class="link-desc">微前端框架</span>
-            </a>
-            <a href="https://github.com/alibaba/hooks" target="_blank">
-              ahooks
-              <span class="link-desc">React Hooks 库</span>
-            </a>
-            <a href="https://motion.ant.design" target="_blank">
-              Ant Motion
-              <span class="link-desc">设计动效</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- 社区 -->
-        <div class="footer-section">
-          <h4>社区</h4>
-          <div class="footer-links">
-            <a href="https://github.com/ant-design/ant-design-mobile/discussions" target="_blank">
-              GitHub Discussions
-            </a>
-            <a href="https://gitter.im/ant-design/ant-design-mobile" target="_blank">
-              Gitter
-            </a>
-            <a href="https://twitter.com/antdesignui" target="_blank">
-              Twitter
-            </a>
-            <a href="https://www.zhihu.com/column/antdesign" target="_blank">
-              知乎专栏
-            </a>
-            <a href="https://zhuanlan.zhihu.com/p/148675163" target="_blank">
-              官方博客
-            </a>
-          </div>
-        </div>
-
-        <!-- 帮助 -->
-        <div class="footer-section">
-          <h4>帮助</h4>
-          <div class="footer-links">
-            <a href="/guide/introduction">组件总览</a>
-            <a href="/guide/quick-start">快速上手</a>
-            <a href="/guide/faq">常见问题</a>
-            <a href="https://github.com/oliver-xie666/ant-mobile-vue/issues" target="_blank">
-              GitHub Issues
-            </a>
-            <a href="/guide/migration">迁移指南</a>
-            <a href="https://github.com/oliver-xie666/ant-mobile-vue/releases" target="_blank">
-              更新日志
-            </a>
-          </div>
-        </div>
-
-        <!-- 更多产品 -->
-        <div class="footer-section">
-          <h4>更多产品</h4>
-          <div class="footer-links">
-            <a href="https://ant.design" target="_blank">Ant Design</a>
-            <a href="https://mobile.ant.design" target="_blank">Ant Design Mobile</a>
-            <a href="https://antv.vision" target="_blank">AntV</a>
-            <a href="https://kitchen.alipay.com" target="_blank">Kitchen</a>
-            <a href="https://yuque.com" target="_blank">语雀</a>
           </div>
         </div>
       </div>
@@ -118,23 +47,26 @@
       <div class="footer-bottom">
         <div class="footer-copyright">
           <p>
-            © 2025 Ant Mobile Vue. 基于
-            <a href="https://mobile.ant.design" target="_blank">Ant Design Mobile</a>
-            使用 Vue 3 技术栈重构的移动端组件库
+            {{ currentFooterConfig.copyright.text }}
+            <a :href="currentFooterConfig.copyright.linkHref" target="_blank">
+              {{ currentFooterConfig.copyright.linkText }}
+            </a>
+            {{ currentFooterConfig.copyright.description }}
           </p>
           <p class="footer-tech">
-            Built with
-            <a href="https://vuejs.org" target="_blank">Vue 3</a>
-            +
-            <a href="https://vitejs.dev" target="_blank">Vite</a>
-            +
-            <a href="https://vitepress.dev" target="_blank">VitePress</a>
+            {{ currentFooterConfig.tech.prefix }}
+            <template v-for="(link, index) in currentFooterConfig.tech.links" :key="link.text">
+              <a :href="link.href" :target="link.target">{{ link.text }}</a>
+              <span v-if="index < currentFooterConfig.tech.links.length - 1"> + </span>
+            </template>
           </p>
         </div>
         <div class="footer-made-by">
           <p>
-            Made with ❤️ by
-            <a href="https://github.com/oliver-xie666" target="_blank">oliver-xie666</a>
+            {{ currentFooterConfig.madeBy.text }}
+            <a :href="currentFooterConfig.madeBy.authorHref" target="_blank">
+              {{ currentFooterConfig.madeBy.author }}
+            </a>
           </p>
           <p class="footer-version">
             Version {{ version }}
@@ -146,7 +78,15 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useData } from 'vitepress'
+import { footerConfig, footerConfigEn } from './config'
 
+const { lang } = useData()
 const version = ref('0.0.1')
+
+const isEnglish = computed(() => lang.value === 'en-US')
+const currentFooterConfig = computed(() => {
+  return isEnglish.value ? footerConfigEn : footerConfig
+})
 </script>
