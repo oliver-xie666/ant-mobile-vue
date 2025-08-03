@@ -10,8 +10,6 @@
 
 <CodeDemo title="基础用法" src="./button/demos/demo1.vue" />
 
-<CodeDemo title="高级用法" src="./button/demos/demo2.vue" />
-
 ## Button
 
 ### 属性

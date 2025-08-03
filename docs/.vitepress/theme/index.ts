@@ -9,6 +9,10 @@ import DotLoading from '../../../src/components/dot-loading/DotLoading.vue'
 import Divider from '../../../src/components/divider/Divider.vue'
 import Space from '../../../src/components/space/Space.vue'
 import Tag from '../../../src/components/tag/Tag.vue'
+import SpinLoading from '../../../src/components/spin-loading/SpinLoading.vue'
+import AutoCenter from '../../../src/components/auto-center/AutoCenter.vue'
+import Mask from '../../../src/components/mask/Mask.vue'
+import Toast from '../../../src/components/toast'
 
 // 导入样式
 import '../../../src/styles/index.ts'
@@ -59,6 +63,13 @@ export default {
     app.component('Divider', Divider)
     app.component('Space', Space)
     app.component('Tag', Tag)
+    app.component('SpinLoading', SpinLoading)
+    app.component('AutoCenter', AutoCenter)
+    app.component('Mask', Mask)
+
+    // Toast 是指令式API，添加到全局属性
+    app.config.globalProperties.$toast = Toast
+
     app.component('DemoBlock', DemoBlock)
     app.component('CodeDemo', CodeDemo)
     app.component('HomePage', HomePage)

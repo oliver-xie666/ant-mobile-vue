@@ -8,7 +8,7 @@
 
 ## 代码演示
 
-<code src="./mask/demos/demo1.vue"></code>
+<CodeDemo title="基础用法" src="./mask/demos/demo1.vue" />
 
 ## API
 

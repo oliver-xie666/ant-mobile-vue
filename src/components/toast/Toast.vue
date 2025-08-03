@@ -18,7 +18,11 @@
         <div v-if="iconElement" :class="`${classPrefix}-icon`">
           <component :is="iconElement" />
         </div>
-        <AutoCenter>{{ content }}</AutoCenter>
+        <div class="adm-toast-auto-center">
+          <div class="adm-toast-auto-center-content">
+            {{ content }}
+          </div>
+        </div>
       </div>
     </div>
   </Mask>
@@ -27,10 +31,14 @@
 <script setup lang="ts">
 import { computed, type CSSProperties, type Component } from 'vue'
 import Mask from '../mask/Mask.vue'
-import AutoCenter from '../auto-center/AutoCenter.vue'
 import SpinLoading from '../spin-loading/SpinLoading.vue'
 import { CheckOutline, CloseOutline } from './icons'
 import type { PropagationEvent } from '../../utils/with-stop-propagation'
+
+// 禁用属性自动继承，手动处理
+defineOptions({
+  inheritAttrs: false
+})
 
 const classPrefix = 'adm-toast'
 
@@ -57,6 +65,10 @@ const props = withDefaults(defineProps<ToastProps>(), {
   position: 'center',
   visible: false,
 })
+
+const emit = defineEmits<{
+  close: []
+}>()
 
 // 图标元素计算
 const iconElement = computed(() => {
@@ -162,6 +174,16 @@ const maskStyle = computed((): CSSProperties => ({
     --size: 48px;
     --color: white;
     margin: 0 auto 8px;
+  }
+}
+
+// 内联的 AutoCenter 样式
+.@{class-prefix-toast}-auto-center {
+  display: flex;
+  justify-content: center;
+
+  &-content {
+    flex: 0 1 auto;
   }
 }
 </style>

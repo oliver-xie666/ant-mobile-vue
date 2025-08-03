@@ -8,7 +8,7 @@ The content is not enough for the width of the entire line, or it is used after 
 
 ## Demos
 
-<code src="./auto-center/demos/demo1.vue"></code>
+<CodeDemo title="Basic Usage" src="./auto-center/demos/demo1.vue" />
 
 ## API
 

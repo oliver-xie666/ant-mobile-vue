@@ -60,13 +60,17 @@ export default defineConfig({
               text: '布局',
               items: [
                 { text: 'Space 间距', link: '/zh/components/space' },
-                { text: 'Divider 分割线', link: '/zh/components/divider' }
+                { text: 'Divider 分割线', link: '/zh/components/divider' },
+                { text: 'AutoCenter 自动居中', link: '/zh/components/auto-center' }
               ]
             },
             {
               text: '反馈',
               items: [
-                { text: 'DotLoading 点状加载', link: '/zh/components/dot-loading' }
+                { text: 'DotLoading 点状加载', link: '/zh/components/dot-loading' },
+                { text: 'SpinLoading 旋转加载', link: '/zh/components/spin-loading' },
+                { text: 'Toast 轻提示', link: '/zh/components/toast' },
+                { text: 'Mask 背景蒙层', link: '/zh/components/mask' }
               ]
             },
             {
@@ -134,13 +138,17 @@ export default defineConfig({
               text: 'Layout',
               items: [
                 { text: 'Space', link: '/en/components/space' },
-                { text: 'Divider', link: '/en/components/divider' }
+                { text: 'Divider', link: '/en/components/divider' },
+                { text: 'AutoCenter', link: '/en/components/auto-center' }
               ]
             },
             {
               text: 'Feedback',
               items: [
-                { text: 'DotLoading', link: '/en/components/dot-loading' }
+                { text: 'DotLoading', link: '/en/components/dot-loading' },
+                { text: 'SpinLoading', link: '/en/components/spin-loading' },
+                { text: 'Toast', link: '/en/components/toast' },
+                { text: 'Mask', link: '/en/components/mask' }
               ]
             },
             {

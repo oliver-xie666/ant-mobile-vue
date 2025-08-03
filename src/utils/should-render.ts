@@ -36,8 +36,15 @@ export function useShouldRender(
     shouldRender.value = !destroyOnCloseValue
   }
 
-  // 监听所有依赖变化
-  watch([() => active, () => forceRender, () => destroyOnClose, initialized], updateShouldRender, {
+  // 监听所有依赖变化（只监听ref类型的参数）
+  const watchSources = [
+    ...(typeof active !== 'boolean' ? [active] : []),
+    ...(typeof forceRender !== 'boolean' && forceRender ? [forceRender] : []),
+    ...(typeof destroyOnClose !== 'boolean' && destroyOnClose ? [destroyOnClose] : []),
+    initialized
+  ]
+
+  watch(watchSources, updateShouldRender, {
     immediate: true
   })
 

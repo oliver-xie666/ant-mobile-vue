@@ -10,8 +10,8 @@
       <div
         v-show="visible"
         ref="maskRef"
-        :class="classPrefix"
-        :style="maskStyle"
+        :class="[classPrefix, $attrs.class]"
+        :style="[maskStyle, $attrs.style]"
         aria-hidden="true"
         @click="handleMaskClick"
         v-bind="stopPropagationHandlers"
@@ -40,6 +40,11 @@ import { useShouldRender } from '../../utils/should-render'
 import { useStopPropagation } from '../../utils/with-stop-propagation'
 import { useConfig } from '../config-provider'
 import type { NativeProps } from '../../utils/native-props'
+
+// 禁用属性自动继承，手动处理
+defineOptions({
+  inheritAttrs: false
+})
 
 const classPrefix = 'adm-mask'
 
@@ -86,6 +91,7 @@ const props = withDefaults(defineProps<MaskProps>(), {
 
 const emit = defineEmits<{
   maskClick: [event: MouseEvent]
+  close: []
 }>()
 
 // 配置和国际化

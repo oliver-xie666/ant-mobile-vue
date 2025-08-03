@@ -10,7 +10,7 @@ A rotating loading indicator with smooth animation, suitable for scenarios that 
 
 ## Demos
 
-<code src="./spin-loading/demos/demo1.vue"></code>
+<CodeDemo title="Basic Usage" src="./spin-loading/demos/demo1.vue" />
 
 ## API
 

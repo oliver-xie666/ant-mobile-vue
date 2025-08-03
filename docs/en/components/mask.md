@@ -8,7 +8,7 @@ Often used in the background layer of a modal window to make the visual focus st
 
 ## Demos
 
-<code src="./mask/demos/demo1.vue"></code>
+<CodeDemo title="Basic Usage" src="./mask/demos/demo1.vue" />
 
 ## API
 

@@ -8,7 +8,7 @@ It is suitable for use when the change of page content cannot directly reflect t
 
 ## Demos
 
-<code src="./toast/demos/demo1.vue"></code>
+<CodeDemo title="Basic Usage" src="./toast/demos/demo1.vue" />
 
 ## API
 

@@ -22,12 +22,25 @@ function cleanup() {
     currentTimeout = null
   }
 
-  if (currentApp && currentContainer) {
-    currentApp.unmount()
-    if (document.body.contains(currentContainer)) {
-      document.body.removeChild(currentContainer)
+  if (currentApp) {
+    try {
+      currentApp.unmount()
+    } catch (error) {
+      // 忽略卸载错误，应用可能已经被卸载
+      console.debug('Toast app unmount error (ignored):', error)
     }
     currentApp = null
+  }
+
+  if (currentContainer) {
+    try {
+      if (document.body.contains(currentContainer)) {
+        document.body.removeChild(currentContainer)
+      }
+    } catch (error) {
+      // 忽略DOM移除错误
+      console.debug('Toast container removal error (ignored):', error)
+    }
     currentContainer = null
   }
 }
@@ -74,8 +87,14 @@ export function show(p: ToastShowProps | string): ToastHandler {
   }
 
   // 创建并挂载应用
-  currentApp = createApp(ToastWrapper)
-  currentApp.mount(currentContainer)
+  try {
+    currentApp = createApp(ToastWrapper)
+    currentApp.mount(currentContainer)
+  } catch (error) {
+    console.error('Failed to create/mount Toast app:', error)
+    cleanup()
+    return { close: () => {} }
+  }
 
   // 设置自动关闭定时器
   if (props.duration !== 0) {

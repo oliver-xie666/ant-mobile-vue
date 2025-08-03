@@ -8,9 +8,7 @@ A button means an operation (or a series of operations). Clicking a button will 
 
 ## Demos
 
-<CodeDemo title="Fill Mode" src="./button/demos/demo1.vue" />
-
-<CodeDemo title="Button Size" src="./button/demos/demo2.vue" />
+<CodeDemo title="Basic Usage" src="./button/demos/demo1.vue" />
 
 ## Button
 
