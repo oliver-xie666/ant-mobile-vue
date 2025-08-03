@@ -10,6 +10,7 @@ export { default as Mask } from './components/mask'
 export { default as Space } from './components/space'
 export { default as SpinLoading } from './components/spin-loading'
 export { default as Tag } from './components/tag'
+export { default as Toast } from './components/toast'
 
 // 类型导出
 export type { AutoCenterProps } from './components/auto-center/types'
@@ -20,6 +21,7 @@ export type { MaskProps, PropagationEvent } from './components/mask/types'
 export type { SpaceProps } from './components/space/types'
 export type { SpinLoadingProps } from './components/spin-loading/types'
 export type { TagProps } from './components/tag/types'
+export type { ToastProps, ToastShowProps, ToastHandler } from './components/toast/types'
 
 // 导出工具函数
 export * from './utils/native-props'
