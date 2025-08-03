@@ -39,6 +39,7 @@ const classes = computed(() => [
 @class-prefix-divider: ~'adm-divider';
 
 .@{class-prefix-divider} {
+  box-sizing: border-box;
 }
 
 .adm-divider-horizontal {

@@ -6,7 +6,7 @@
     <svg
       height="1em"
       viewBox="0 0 100 40"
-      style="vertical-align: -0.125em"
+      :style="{ verticalAlign: '-0.125em' }"
     >
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g transform="translate(-100.000000, -71.000000)">

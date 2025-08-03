@@ -19,6 +19,7 @@ import './styles/override.less'
 
 // 创建演示组件包装器
 import DemoBlock from './components/DemoBlock.vue'
+import CodeDemo from './components/CodeDemo.vue'
 import HomePage from './components/HomePage.vue'
 import IconDemoAll from '../../zh/components/icon/IconDemoAll.vue'
 import IconDemoSingle from '../../zh/components/icon/IconDemoSingle.vue'
@@ -26,15 +27,26 @@ import Navbar from './components/Navbar.vue'
 import Main from './components/Main.vue'
 import Footer from './components/Footer.vue'
 import PageLayout from './components/PageLayout.vue'
+import DemoPreview from './components/DemoPreview.vue'
 
 export default {
   extends: DefaultTheme,
   Layout() {
-    // 检查是否是首页
     const route = useRoute()
+
+    // 检查是否是iframe模式
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      if (urlParams.get('mode') === 'iframe' && urlParams.get('demo')) {
+        return h(DemoPreview)
+      }
+    }
+
+    // 检查是否是首页
     if (route.path === '/' || route.path === '/zh/' || route.path === '/en/' || route.path === '/zh' || route.path === '/en') {
       return h(HomePage)
     }
+
     // 其他页面使用带导航栏的页面布局
     return h(PageLayout, null, {
       default: () => h(DefaultTheme.Layout)
@@ -48,11 +60,13 @@ export default {
     app.component('Space', Space)
     app.component('Tag', Tag)
     app.component('DemoBlock', DemoBlock)
+    app.component('CodeDemo', CodeDemo)
     app.component('HomePage', HomePage)
     app.component('Navbar', Navbar)
     app.component('Main', Main)
     app.component('Footer', Footer)
     app.component('PageLayout', PageLayout)
+    app.component('DemoPreview', DemoPreview)
     app.component('IconDemoAll', IconDemoAll)
     app.component('IconDemoSingle', IconDemoSingle)
   }

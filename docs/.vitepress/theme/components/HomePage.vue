@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Navbar from './Navbar.vue'
 import Main from './Main.vue'
 import Footer from './Footer.vue'

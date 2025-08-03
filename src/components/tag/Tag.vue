@@ -65,7 +65,7 @@ const tagStyle = computed(() => {
     '--background-color': string
   } = {
     '--border-color': color,
-    '--text-color': props.fill === 'outline' ? color : '#ffffff',
+            '--text-color': props.fill === 'outline' ? color : '#fff',
     '--background-color': props.fill === 'outline' ? 'transparent' : color,
     ...props.style,
   }
@@ -84,6 +84,7 @@ const onClick = (event: MouseEvent) => {
 
 .@{class-prefix-tag} {
   --border-radius: var(--adm-tag-border-radius, 2px);
+
   padding: 2px 4px;
   font-size: var(--adm-font-size-3);
   line-height: 1;

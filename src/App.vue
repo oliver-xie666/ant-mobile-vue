@@ -98,14 +98,14 @@ const handleClick = () => {
       <div class="demo-group">
         <DotLoading />
         <DotLoading color="primary" />
-        <DotLoading color="white" style="background: #333; padding: 10px;" />
+        <DotLoading color="white" :style="{ background: '#333', padding: '10px' }" />
       </div>
     </section>
 
     <section class="demo-section">
       <h2>Divider 分割线</h2>
       <div class="demo-group">
-        <div style="width: 100%;">
+        <div class="full-width">
           <p>上方内容</p>
           <Divider />
           <p>下方内容</p>
@@ -130,7 +130,7 @@ const handleClick = () => {
     <section class="demo-section">
       <h2>Space 间距</h2>
       <div class="demo-group">
-        <div style="width: 100%;">
+        <div class="full-width">
           <h3>水平间距</h3>
           <Space>
             <Button>按钮1</Button>
@@ -153,7 +153,7 @@ const handleClick = () => {
           </Space>
 
           <h3>换行</h3>
-          <Space wrap style="--gap: 12px;">
+          <Space wrap :style="{ '--gap': '12px' }">
             <Button>按钮1</Button>
             <Button>按钮2</Button>
             <Button>按钮3</Button>
@@ -176,7 +176,7 @@ const handleClick = () => {
     <section class="demo-section">
       <h2>Tag 标签</h2>
       <div class="demo-group">
-        <div style="width: 100%;">
+        <div class="full-width">
           <h3>基础标签</h3>
           <Space wrap>
             <Tag>默认</Tag>
@@ -212,8 +212,8 @@ const handleClick = () => {
 
           <h3>可点击标签</h3>
           <Space wrap>
-            <Tag @click="() => console.log('点击了标签')" style="cursor: pointer;">点击我</Tag>
-            <Tag color="primary" @click="() => console.log('主要标签被点击')" style="cursor: pointer;">
+            <Tag @click="() => console.log('点击了标签')" class="clickable-tag">点击我</Tag>
+            <Tag color="primary" @click="() => console.log('主要标签被点击')" class="clickable-tag">
               主要标签
             </Tag>
           </Space>
@@ -255,5 +255,13 @@ const handleClick = () => {
 .demo-group .adm-button.adm-button-block {
   margin-right: 0;
   margin-bottom: 12px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.clickable-tag {
+  cursor: pointer;
 }
 </style>

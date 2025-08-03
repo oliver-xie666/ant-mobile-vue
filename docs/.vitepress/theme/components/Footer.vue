@@ -77,7 +77,7 @@
   </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useData } from 'vitepress'
 import { footerConfig, footerConfigEn } from './config'

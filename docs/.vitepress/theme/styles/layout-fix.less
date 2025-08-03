@@ -1,0 +1,89 @@
+/* 专门用于修复VitePress布局的额外样式 */
+
+/* 强制应用布局样式 */
+.Layout {
+  .VPContent {
+    padding-top: 0;
+  }
+
+  .VPSidebar {
+    width: 272px;
+    top: 64px;
+    height: calc(100vh - 64px);
+  }
+
+  .VPContent.has-sidebar {
+    padding-left: 272px;
+  }
+}
+
+/* 兼容不同版本的VitePress类名 */
+[class*="sidebar"] {
+  width: 272px !important;
+}
+
+[class*="content"] {
+  &[class*="has-sidebar"] {
+    padding-left: 272px !important;
+  }
+}
+
+/* 强制容器宽度 */
+.container,
+[class*="container"] {
+  max-width: 1152px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+}
+
+/* 确保文档内容样式生效 */
+[class*="doc"] {
+  h1 {
+    font-size: 32px;
+    color: #314659;
+    font-weight: 600;
+    margin: 0 0 24px;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #314659;
+    font-weight: 600;
+    margin: 48px 0 16px;
+    border-top: 1px solid #e6e6e6;
+    padding-top: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+    color: #314659;
+    font-weight: 600;
+    margin: 32px 0 16px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    color: #314659;
+    margin: 16px 0;
+  }
+}
+
+/* 移动端响应式 */
+@media (width <= 768px) {
+  .Layout {
+    .VPSidebar {
+      top: 56px;
+      height: calc(100vh - 56px);
+    }
+
+    .VPContent.has-sidebar {
+      padding-left: 0;
+    }
+  }
+
+  .container,
+  [class*="container"] {
+    padding: 0 16px !important;
+  }
+}

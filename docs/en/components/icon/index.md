@@ -1,6 +1,6 @@
-# Icon
+# Icon 图标
 
-The icons are in a separate npm package. If you want to use the icons, you need to install it first:
+图标是在一个单独的 npm 包中，如果你想使用图标，需要先安装它：
 
 ```bash
 npm install --save ant-mobile-vue-icons
@@ -10,21 +10,21 @@ yarn add ant-mobile-vue-icons
 pnpm add ant-mobile-vue-icons
 ```
 
-Then just import the icons you need from this package:
+然后从这个包中引入你所需要的图标即可：
 
 ```js
 import { AntOutline } from 'ant-mobile-vue-icons'
 ```
 
-Since the mainstream build tools automatically do Tree-Shaking, only the icons you use will be packaged in, so you don't have to worry about package size.
+由于主流的构建工具会自动做 Tree-Shaking，所以最终被打包进来的只有你用到的那些图标，不必担心包体积问题。
 
-## Icon List
+## 图标列表
 
 <DemoBlock>
   <IconDemoAll />
 </DemoBlock>
 
-## Example
+## 使用示例
 
 <DemoBlock>
   <IconDemoSingle />
@@ -32,40 +32,40 @@ Since the mainstream build tools automatically do Tree-Shaking, only the icons y
 
 ## API
 
-### Icon Props
+### Icon 属性
 
-| Property | Description | Type | Default |
+| 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| color | Icon color | `string` | `currentColor` |
-| size | Icon size | `string \| number` | `inherit` |
+| color | 图标颜色 | `string` | `currentColor` |
+| size | 图标大小 | `string \| number` | `inherit` |
 
-### Common Icons
+### 常用图标
 
-#### Basic Icons
+#### 基础图标
 - AntOutline
 - CheckOutline
 - CloseOutline
 - SearchOutline
 - MoreOutline
 
-#### Direction Icons  
+#### 方向图标  
 - LeftOutline
 - RightOutline
 - UpOutline
 - DownOutline
 
-#### Function Icons
+#### 功能图标
 - AddOutline
 - MinusOutline
 - EditOutline
 - DeleteOutline
 - ShareOutline
 
-For more icons, please check the complete icon list.
+更多图标请查看完整的图标列表。
 
-## Custom Icons
+## 自定义图标
 
-If you need custom icons, you can refer to the following approach:
+如果你需要自定义图标，可以参考以下方式：
 
 ```vue
 <template>

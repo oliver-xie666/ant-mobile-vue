@@ -3,20 +3,84 @@
   display: none !important;
 }
 
-/* 确保内容区域不被遮挡 */
-.VPContent {
-  padding-top: 0 !important;
-}
-
-/* 修复侧边栏样式 */
+/* 调整侧边栏位置以适应自定义导航栏 */
 .VPSidebar {
-  top: 64px !important; /* 导航栏高度 */
+  top: 64px !important;
   height: calc(100vh - 64px) !important;
+  border-right: 1px solid #e6e6e6 !important;
 }
 
+/* 重要：让主内容区域占用所有可用空间 */
+.VPContent.has-sidebar {
+  /* 移除宽度限制，让内容区域自适应 */
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* 主文档内容区域 - 使用源项目的布局方式 */
+.VPDoc {
+  /* 移除宽度限制，让它占用所有可用空间 */
+  max-width: none !important;
+  width: 100% !important;
+  padding: 12px 48px 24px !important; /* 匹配源项目的padding */
+}
+
+/* 内部文档容器 - 这里才设置最大宽度 */
+.vp-doc {
+  max-width: 1300px !important; /* 匹配源项目的真实最大宽度 */
+  margin: 0 auto !important;
+  padding: 0 !important; /* 移除额外padding，上级已设置 */
+}
+
+/* 优化文档内容样式，匹配源项目 */
+.vp-doc h1 {
+  font-size: 32px;
+  color: #314659;
+  font-weight: 600;
+  line-height: 40px;
+  margin: 0 0 24px;
+}
+
+.vp-doc h2 {
+  font-size: 24px;
+  color: #314659;
+  font-weight: 600;
+  line-height: 32px;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 24px;
+  margin: 48px 0 16px;
+}
+
+.vp-doc h3 {
+  font-size: 16px;
+  color: #314659;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 32px 0 16px;
+}
+
+.vp-doc p {
+  font-size: 14px;
+  line-height: 22px;
+  color: #314659;
+  margin: 16px 0;
+}
+
+
+
+/* 移动端适配 */
 @media (width <= 768px) {
   .VPSidebar {
-    top: 56px !important; /* 移动端导航栏高度 */
+    top: 56px !important;
     height: calc(100vh - 56px) !important;
+  }
+
+  /* 移动端调整padding */
+  .VPDoc {
+    padding: 16px !important;
+  }
+
+  .vp-doc {
+    max-width: none !important; /* 移动端不限制宽度 */
   }
 }

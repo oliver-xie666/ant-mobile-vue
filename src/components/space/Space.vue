@@ -93,6 +93,7 @@ const onClick = (event: MouseEvent) => {
 
 .@{class-prefix-space} {
   display: inline-flex;
+
   --gap: 8px;
   --gap-vertical: var(--gap);
   --gap-horizontal: var(--gap);
@@ -101,6 +102,7 @@ const onClick = (event: MouseEvent) => {
     flex-direction: column;
     > .@{class-prefix-space}-item {
       margin-bottom: var(--gap-vertical);
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -109,6 +111,7 @@ const onClick = (event: MouseEvent) => {
 
   &-horizontal {
     flex-direction: row;
+
     &:not(:empty) {
       margin-right: calc(var(--gap-horizontal) * -1);
     }
@@ -132,12 +135,15 @@ const onClick = (event: MouseEvent) => {
     &-center {
       align-items: center;
     }
+
     &-start {
       align-items: flex-start;
     }
+
     &-end {
       align-items: flex-end;
     }
+
     &-baseline {
       align-items: baseline;
     }
@@ -147,21 +153,27 @@ const onClick = (event: MouseEvent) => {
     &-center {
       justify-content: center;
     }
+
     &-start {
       justify-content: flex-start;
     }
+
     &-end {
       justify-content: flex-end;
     }
+
     &-between {
       justify-content: space-between;
     }
+
     &-around {
       justify-content: space-around;
     }
+
     &-evenly {
       justify-content: space-evenly;
     }
+
     &-stretch {
       justify-content: stretch;
     }
