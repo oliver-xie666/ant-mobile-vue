@@ -218,14 +218,14 @@
 
 ### 📈 **第二优先级 - 紧随其后** (预计1-2周)
 
-#### 🎭 Vue3 Composables 开发
-- [ ] **Vue版本的核心hooks**
-  - [ ] `useConfig` - 配置系统hook
-  - [ ] `usePropsValue` - 受控组件hook
-  - [ ] `useRefState` - 状态管理hook
-  - [ ] `useInitialized` - 初始化检查hook
-  - [ ] `useLockScroll` - 滚动锁定hook
-  - [ ] `useTouch` - 触摸事件hook
+#### 🎭 Vue3 Composables 开发 ✅ 已完成
+- [x] **Vue版本的核心hooks**
+  - [x] `useConfig` - 配置系统hook ✅ (已在ConfigProvider中实现)
+  - [x] `usePropsValue` - 受控组件hook
+  - [x] `useRefState` - 状态管理hook
+  - [x] `useInitialized` - 初始化检查hook
+  - [x] `useLockScroll` - 滚动锁定hook
+  - [x] `useTouch` - 触摸事件hook
 
 #### 📋 全局类型定义完善
 - [ ] **类型系统补全**
