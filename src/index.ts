@@ -6,6 +6,7 @@ export { default as AutoCenter } from './components/auto-center'
 export { default as Button } from './components/button'
 export { default as DotLoading } from './components/dot-loading'
 export { default as Divider } from './components/divider'
+export { default as Mask } from './components/mask'
 export { default as Space } from './components/space'
 export { default as SpinLoading } from './components/spin-loading'
 export { default as Tag } from './components/tag'
@@ -15,6 +16,7 @@ export type { AutoCenterProps } from './components/auto-center/types'
 export type { ButtonProps } from './components/button/types'
 export type { DotLoadingProps } from './components/dot-loading/types'
 export type { DividerProps } from './components/divider/types'
+export type { MaskProps, PropagationEvent } from './components/mask/types'
 export type { SpaceProps } from './components/space/types'
 export type { SpinLoadingProps } from './components/spin-loading/types'
 export type { TagProps } from './components/tag/types'
@@ -47,11 +49,12 @@ import AutoCenter from './components/auto-center'
 import Button from './components/button'
 import DotLoading from './components/dot-loading'
 import Divider from './components/divider'
+import Mask from './components/mask'
 import Space from './components/space'
 import SpinLoading from './components/spin-loading'
 import Tag from './components/tag'
 
-const components = [AutoCenter, Button, DotLoading, Divider, Space, SpinLoading, Tag]
+const components = [AutoCenter, Button, DotLoading, Divider, Mask, Space, SpinLoading, Tag]
 
 export const install = (app: App): App => {
   components.forEach(component => {
