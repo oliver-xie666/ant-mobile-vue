@@ -6,6 +6,7 @@ export { default as Button } from './components/button'
 export { default as DotLoading } from './components/dot-loading'
 export { default as Divider } from './components/divider'
 export { default as Space } from './components/space'
+export { default as SpinLoading } from './components/spin-loading'
 export { default as Tag } from './components/tag'
 
 // 类型导出
@@ -13,6 +14,7 @@ export type { ButtonProps } from './components/button/types'
 export type { DotLoadingProps } from './components/dot-loading/types'
 export type { DividerProps } from './components/divider/types'
 export type { SpaceProps } from './components/space/types'
+export type { SpinLoadingProps } from './components/spin-loading/types'
 export type { TagProps } from './components/tag/types'
 
 // 导出工具函数
@@ -43,9 +45,10 @@ import Button from './components/button'
 import DotLoading from './components/dot-loading'
 import Divider from './components/divider'
 import Space from './components/space'
+import SpinLoading from './components/spin-loading'
 import Tag from './components/tag'
 
-const components = [Button, DotLoading, Divider, Space, Tag]
+const components = [Button, DotLoading, Divider, Space, SpinLoading, Tag]
 
 export const install = (app: App): App => {
   components.forEach(component => {
