@@ -1,0 +1,76 @@
+// 暗色主题变量定义
+// 基于 ant-design-mobile 的暗色主题设计
+
+html[data-prefers-color-scheme='dark'] {
+  // 主色系（暗色下调整）
+  --adm-color-primary: #3086ff;
+  --adm-color-success: #34b368;
+  --adm-color-warning: #ffa930;
+  --adm-color-danger: #ff4a58;
+
+  // 扩展色彩（暗色调整）
+  --adm-color-yellow: #ffa930;
+  --adm-color-orange: #e65a2b;
+  --adm-color-wathet: #0d2543;
+
+  // 文本颜色（暗色主题）
+  --adm-color-text: #e6e6e6;
+  --adm-color-text-secondary: #b3b3b3;
+  --adm-color-weak: #808080;
+  --adm-color-light: #4d4d4d;
+  --adm-color-white: #fff;
+  --adm-color-text-light-solid: var(--adm-color-white);
+  --adm-color-text-dark-solid: #000;
+
+  // 背景颜色（暗色主题）
+  --adm-color-background: #1a1a1a;
+  --adm-color-background-body: var(--adm-color-background);
+  --adm-color-box: #0a0a0a;
+  --adm-color-fill-content: var(--adm-color-box);
+
+  // 边框颜色（暗色主题）
+  --adm-color-border: #2b2b2b;
+  --adm-border-color: var(--adm-color-border); // 向后兼容
+
+  // 阴影系统（暗色主题）
+  --adm-shadow-1: 0 1px 2px rgb(0 0 0 / 20%), 0 1px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px rgb(0 0 0 / 10%);
+  --adm-shadow-2: 0 1px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px rgb(0 0 0 / 10%), 0 4px 6px -1px rgb(0 0 0 / 30%);
+  --adm-shadow-3: 0 4px 6px -1px rgb(0 0 0 / 30%), 0 2px 4px rgb(0 0 0 / 10%), 0 10px 15px -3px rgb(0 0 0 / 50%);
+}
+
+// 支持系统偏好设置的自动暗色模式
+@media (prefers-color-scheme: dark) {
+  html:not([data-prefers-color-scheme]) {
+    // 主色系
+    --adm-color-primary: #3086ff;
+    --adm-color-success: #34b368;
+    --adm-color-warning: #ffa930;
+    --adm-color-danger: #ff4a58;
+
+    // 扩展色彩
+    --adm-color-yellow: #ffa930;
+    --adm-color-orange: #e65a2b;
+    --adm-color-wathet: #0d2543;
+
+    // 文本颜色
+    --adm-color-text: #e6e6e6;
+    --adm-color-text-secondary: #b3b3b3;
+    --adm-color-weak: #808080;
+    --adm-color-light: #4d4d4d;
+
+    // 背景颜色
+    --adm-color-background: #1a1a1a;
+    --adm-color-background-body: var(--adm-color-background);
+    --adm-color-box: #0a0a0a;
+    --adm-color-fill-content: var(--adm-color-box);
+
+    // 边框颜色
+    --adm-color-border: #2b2b2b;
+    --adm-border-color: var(--adm-color-border);
+
+    // 阴影系统
+    --adm-shadow-1: 0 1px 2px rgb(0 0 0 / 20%), 0 1px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px rgb(0 0 0 / 10%);
+    --adm-shadow-2: 0 1px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px rgb(0 0 0 / 10%), 0 4px 6px -1px rgb(0 0 0 / 30%);
+    --adm-shadow-3: 0 4px 6px -1px rgb(0 0 0 / 30%), 0 2px 4px rgb(0 0 0 / 10%), 0 10px 15px -3px rgb(0 0 0 / 50%);
+  }
+}

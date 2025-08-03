@@ -98,3 +98,6 @@ export type { Config, ConfigProviderProps } from '../components/config-provider/
 
 // Composables类型（从composables重新导出）
 export type { UsePropsValueOptions } from '../composables/use-props-value'
+
+// 主题相关类型（从utils重新导出）
+export type { ThemeConfig } from '../utils/theme'

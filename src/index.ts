@@ -15,6 +15,7 @@ export * from './utils/noop'
 export * from './utils/sleep'
 export * from './utils/get-scroll-parent'
 export * from './utils/supports-passive'
+export * from './utils/theme'
 
 // 导出 Composables
 export * from './composables'
