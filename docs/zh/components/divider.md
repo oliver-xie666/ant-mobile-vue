@@ -17,8 +17,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| content-position | 内容位置 | `'left' \| 'center' \| 'right'` | `'center'` |
-| dashed | 是否虚线 | `boolean` | `false` |
+| content-position | 内容位置，仅在 `direction` 为 `horizontal` 时有效 | `'left' \| 'center' \| 'right'` | `'center'` |
 | direction | 水平还是垂直类型 | `'horizontal' \| 'vertical'` | `'horizontal'` |
 
 ### CSS 变量

@@ -9,7 +9,8 @@ defineOptions({
 const props = withDefaults(defineProps<ConfigProviderProps>(), {})
 
 // 提供配置到子组件
-const { children, ...config } = props
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const { children: _children, ...config } = props
 provideConfig(config)
 </script>
 

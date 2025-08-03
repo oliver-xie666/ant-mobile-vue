@@ -1,0 +1,35 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "outDir": "./lib",
+    "rootDir": "./",
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "skipLibCheck": true,
+    "composite": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "lib/index.ts",
+    "src/components/**/*",
+    "src/utils/**/*", 
+    "src/composables/**/*",
+    "src/locales/**/*",
+    "src/global/**/*",
+    "src/types/**/*"
+  ],
+  "exclude": [
+    "src/**/__tests__/**/*",
+    "src/**/*.test.*",
+    "src/**/*.spec.*",
+    "src/tests/**/*",
+    "**/*.stories.*",
+    "node_modules",
+    "dist",
+    "lib"
+  ]
+}

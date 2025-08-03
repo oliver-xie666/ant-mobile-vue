@@ -5,10 +5,10 @@ export type Awaitable<T> = T | Promise<T>
 
 // 函数类型
 export type Fn<T = void> = () => T
-export type AnyFn = (...args: any[]) => any
+export type AnyFn = (...args: unknown[]) => unknown
 
 // 键值对类型
-export type Recordable<T = any> = Record<string, T>
+export type Recordable<T = unknown> = Record<string, T>
 
 // 部分必需类型
 export type PartialRequired<T, K extends keyof T> = Partial<T> & Required<Pick<T, K>>
@@ -34,7 +34,7 @@ export type NumberKeys<T> = Extract<keyof T, number>
 export type ValueOf<T> = T[keyof T]
 
 // 联合类型转交集类型
-export type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
+export type UnionToIntersection<U> = (U extends unknown ? (k: U) => void : never) extends (
   k: infer I
 ) => void
   ? I

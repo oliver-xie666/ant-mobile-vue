@@ -25,11 +25,19 @@ Avoid components clinging together and reserve unified space.
 | justify | Main axis alignment | `'start' \| 'end' \| 'center' \| 'between' \| 'around' \| 'evenly' \| 'stretch'` | - |
 | wrap | Whether to wrap automatically, only effective when `horizontal` | `boolean` | `false` |
 
+### Events
+
+| Event | Description | Type |
+| --- | --- | --- |
+| click | Click event | `(event: MouseEvent) => void` |
+
 ### CSS Variables
 
 | Name | Description | Default |
 | --- | --- | --- |
-| --gap | Gap size | `8px` |
+| --gap | Gap size, affects both horizontal and vertical spacing | `8px` |
+| --gap-horizontal | Horizontal gap size, overrides --gap setting | `var(--gap)` |
+| --gap-vertical | Vertical gap size, overrides --gap setting | `var(--gap)` |
 
 ## Theming
 
@@ -37,7 +45,8 @@ Avoid components clinging together and reserve unified space.
 
 The component provides the following CSS variables, which can be used to customize styles. For usage, please refer to [ConfigProvider](/en/components/config-provider).
 
-| Name | Default |
-| --- | --- |
-| --adm-space-gap-horizontal | `8px` |
-| --adm-space-gap-vertical | `8px` |
+| Name | Description | Default |
+| --- | --- | --- |
+| --gap | Unified gap size | `8px` |
+| --gap-horizontal | Horizontal spacing | `var(--gap)` |
+| --gap-vertical | Vertical spacing | `var(--gap)` |

@@ -25,11 +25,19 @@
 | justify | 主轴对齐方式 | `'start' \| 'end' \| 'center' \| 'between' \| 'around' \| 'evenly' \| 'stretch'` | - |
 | wrap | 是否自动换行，仅在 `horizontal` 时有效 | `boolean` | `false` |
 
+### 事件
+
+| 事件名 | 说明 | 类型 |
+| --- | --- | --- |
+| click | 点击事件 | `(event: MouseEvent) => void` |
+
 ### CSS 变量
 
 | 属性 | 说明 | 默认值 |
 | --- | --- | --- |
-| --gap | 间距大小 | `8px` |
+| --gap | 间距大小，同时影响水平和垂直间距 | `8px` |
+| --gap-horizontal | 水平间距大小，覆盖 --gap 设置 | `var(--gap)` |
+| --gap-vertical | 垂直间距大小，覆盖 --gap 设置 | `var(--gap)` |
 
 ## 主题定制
 
@@ -37,7 +45,8 @@
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider](/zh/components/config-provider) 组件。
 
-| 名称 | 默认值 |
-| --- | --- |
-| --adm-space-gap-horizontal | `8px` |
-| --adm-space-gap-vertical | `8px` |
+| 名称 | 说明 | 默认值 |
+| --- | --- | --- |
+| --gap | 统一间距大小 | `8px` |
+| --gap-horizontal | 水平方向间距 | `var(--gap)` |
+| --gap-vertical | 垂直方向间距 | `var(--gap)` |

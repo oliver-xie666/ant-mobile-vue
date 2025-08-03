@@ -17,27 +17,24 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| closable | 是否可关闭 | `boolean` | `false` |
-| color | 语义化颜色 | `'default' \| 'primary' \| 'success' \| 'warning' \| 'danger'` | `'default'` |
+| color | 标签色，支持预设颜色和自定义颜色值 | `'default' \| 'primary' \| 'success' \| 'warning' \| 'danger' \| string` | `'default'` |
 | fill | 填充模式 | `'solid' \| 'outline'` | `'solid'` |
 | round | 是否圆角 | `boolean` | `false` |
 
 ### 事件
 
-| 事件名 | 说明 | 回调参数 |
+| 事件名 | 说明 | 类型 |
 | --- | --- | --- |
-| close | 关闭时的回调 | `() => void` |
+| click | 点击标签时触发 | `(event: MouseEvent) => void` |
 
 ### CSS 变量
 
-| 属性 | 说明 | 默认值 |
-| --- | --- | --- |
-| --background-color | 背景色 | `var(--adm-color-fill-content)` |
-| --border-color | 边框颜色 | `transparent` |
-| --border-radius | 圆角大小 | `2px` |
-| --font-size | 字号 | `12px` |
-| --padding | 内边距 | `2px 6px` |
-| --text-color | 文字颜色 | `var(--adm-color-text)` |
+| 属性 | 说明 | 默认值 | 全局变量 |
+| --- | --- | --- | --- |
+| --background-color | 背景颜色 | 当 `fill=solid` 时，默认值为 `color` 属性对应的颜色；当 `fill=outline` 时，默认值为 `transparent` | - |
+| --border-color | 边框颜色 | `color` 属性对应的颜色 | - |
+| --border-radius | `round=false` 时的圆角大小 | `2px` | `--adm-tag-border-radius` |
+| --text-color | 文字颜色 | 当 `fill=solid` 时，默认值为 `#ffffff`；当 `fill=outline` 时，默认值为 `color` 属性对应的颜色 | - |
 
 ## 主题定制
 
@@ -47,6 +44,4 @@
 
 | 名称 | 默认值 |
 | --- | --- |
-| --adm-tag-padding | `2px 6px` |
 | --adm-tag-border-radius | `2px` |
-| --adm-tag-font-size | `12px` |

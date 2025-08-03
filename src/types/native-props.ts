@@ -13,14 +13,14 @@ export type NativeHTMLProps = {
   title?: string
   role?: string
   'data-testid'?: string
-} & Record<`data-${string}`, any> & Record<`aria-${string}`, any>
+} & Record<`data-${string}`, string | number | boolean> & Record<`aria-${string}`, string | number | boolean>
 
 // 组件基础Props类型
 export type BaseProps<S extends string = never> = NativeProps<S> & NativeHTMLProps
 
 // withNativeProps工具函数的参数类型
 export type WithNativePropsOptions<P extends NativeProps> = P & {
-  [key: string]: any
+  [key: string]: unknown
 }
 
 // 事件处理器类型

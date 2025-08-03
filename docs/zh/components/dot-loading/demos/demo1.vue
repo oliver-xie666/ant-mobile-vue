@@ -12,7 +12,7 @@
       </div>
     </DemoBlock>
 
-    <DemoBlock title="有大小的">
+    <DemoBlock title="不同大小">
       <div class="demo-flex">
         <DotLoading class="size-16" />
         <DotLoading class="size-24" />
@@ -41,14 +41,14 @@ import DotLoading from '../../../../../src/components/dot-loading/DotLoading.vue
 }
 
 .size-16 {
-  --size: 16px;
+  font-size: 16px;
 }
 
 .size-24 {
-  --size: 24px;
+  font-size: 24px;
 }
 
 .size-32 {
-  --size: 32px;
+  font-size: 32px;
 }
 </style>

@@ -38,6 +38,9 @@ export interface TagProps extends /* @vue-ignore */ NativeProps<
   onClick?: (e: MouseEvent) => void
 }
 
+// 显式导出类型，使其可以被外部导入
+export type { TagProps }
+
 const props = withDefaults(defineProps<TagProps>(), {
   color: 'default' as const,
   fill: 'solid' as const,

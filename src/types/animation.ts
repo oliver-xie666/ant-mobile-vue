@@ -35,7 +35,7 @@ export type TransitionTimingFunction =
 // 动画关键帧
 export interface AnimationKeyframe {
   offset?: number
-  [property: string]: any
+  [property: string]: string | number | undefined
 }
 
 // 动画选项

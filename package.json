@@ -3,12 +3,54 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    },
+    "./lib/*": "./lib/*",
+    "./lib/button": {
+      "import": "./lib/button/index.js",
+      "require": "./lib/button/index.js",
+      "types": "./lib/button/index.d.ts"
+    },
+    "./lib/dot-loading": {
+      "import": "./lib/dot-loading/index.js",
+      "require": "./lib/dot-loading/index.js", 
+      "types": "./lib/dot-loading/index.d.ts"
+    },
+    "./lib/divider": {
+      "import": "./lib/divider/index.js",
+      "require": "./lib/divider/index.js",
+      "types": "./lib/divider/index.d.ts"
+    },
+    "./lib/space": {
+      "import": "./lib/space/index.js",
+      "require": "./lib/space/index.js",
+      "types": "./lib/space/index.d.ts"
+    },
+    "./lib/tag": {
+      "import": "./lib/tag/index.js",
+      "require": "./lib/tag/index.js",
+      "types": "./lib/tag/index.d.ts"
+    },
+    "./lib/*/index.css": "./lib/*/index.css"
+  },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
+    "build:lib": "vite build --mode lib && npm run build:types",
+    "build:types": "vue-tsc --build --project tsconfig.lib.json",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",

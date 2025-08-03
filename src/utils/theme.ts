@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'vue'
 import { canUseDom } from './can-use-dom'
-import type { ThemeMode, ColorValue } from '../types'
+import type { ColorValue } from '../types'
 
 // 主题配置接口
 export interface ThemeConfig {
@@ -164,7 +164,7 @@ export function themeConfigToCSSVars(config: Partial<ThemeConfig>): CSSPropertie
   Object.entries(config).forEach(([key, value]) => {
     const cssVar = configMap[key as keyof ThemeConfig]
     if (cssVar && value !== undefined) {
-      ;(cssVars as any)[cssVar] = value
+      ;(cssVars as Record<string, string>)[cssVar] = value as string
     }
   })
 

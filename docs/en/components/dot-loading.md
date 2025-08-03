@@ -16,15 +16,15 @@ Suitable for scenarios that require simple loading status.
 
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
-| color | Color | `string` | `'default'` |
-| size | Size in `px` | `number` | `24` |
+| color | Color, supports preset colors and custom color values | `'default' \| 'primary' \| 'white' \| string` | `'default'` |
+
+> **Size Control**: The component size is controlled by CSS `font-size`, defaults to `1em`. You can adjust the size by setting the parent element's `font-size` or directly setting the component's `font-size`.
 
 ### CSS Variables
 
 | Name | Description | Default |
 | --- | --- | --- |
 | --color | Color | `var(--adm-color-weak)` |
-| --size | Size | `24px` |
 
 ## Theming
 
@@ -35,4 +35,17 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default |
 | --- | --- |
 | --adm-dot-loading-color | `var(--adm-color-weak)` |
-| --adm-dot-loading-size | `24px` |
+
+### Custom Size Examples
+
+```css
+/* Method 1: Control size via font-size */
+.custom-dot-loading {
+  font-size: 32px; /* Loading animation scales proportionally */
+}
+
+/* Method 2: Control color via CSS variables */
+.custom-color-loading {
+  --adm-dot-loading-color: #ff6430;
+}
+```

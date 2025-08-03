@@ -44,5 +44,5 @@ export type Config = {
 }
 
 export type ConfigProviderProps = Partial<Config> & {
-  children?: any
+  children?: unknown
 }

@@ -2,7 +2,7 @@ export function mergeLocale<T extends object, P extends object>(
   base: T,
   patch: P
 ): T {
-  function merge(a: any, b: any): any {
+  function merge(a: unknown, b: unknown): unknown {
     if (
       typeof a !== 'object' ||
       typeof b !== 'object' ||
@@ -11,7 +11,7 @@ export function mergeLocale<T extends object, P extends object>(
     ) {
       return b !== undefined ? b : a
     }
-    const result: any = {}
+    const result: Record<string, unknown> = {}
     for (const key in a) {
       if (a.hasOwnProperty(key)) {
         result[key] = merge(a[key], b[key])

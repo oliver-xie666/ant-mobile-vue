@@ -4,24 +4,18 @@
     @click="onClick"
   >
     <template
-      v-for="(child, index) in children"
+      v-for="(child, index) in validChildren"
       :key="index"
     >
-      <div
-        v-if="isValidChild(child)"
-        :class="`${classPrefix}-item`"
-      >
-        <component
-          :is="child"
-        />
+      <div :class="`${classPrefix}-item`">
+        <component :is="child" />
       </div>
     </template>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, useSlots, Comment, Text } from 'vue'
-import type { VNode } from 'vue'
+import { computed, useSlots } from 'vue'
 import type { NativeProps } from '../../utils/native-props'
 
 const classPrefix = 'adm-space'
@@ -41,6 +35,9 @@ export interface SpaceProps extends /* @vue-ignore */ NativeProps<'--gap' | '--g
   block?: boolean
   onClick?: (event: MouseEvent) => void
 }
+
+// 显式导出类型，使其可以被外部导入
+export type { SpaceProps }
 
 const props = withDefaults(defineProps<SpaceProps>(), {
   direction: 'horizontal',
@@ -64,19 +61,14 @@ const classes = computed(() => [
   props.class,
 ])
 
-const children = computed(() => {
-  return slots.default?.() || []
+// 简化子元素处理逻辑，与源项目保持一致
+const validChildren = computed(() => {
+  const children = slots.default?.() || []
+  return children.filter(child =>
+    child !== null &&
+    child !== undefined
+  )
 })
-
-const isValidChild = (child: VNode) => {
-  // 过滤掉注释节点和空文本节点
-  if (child.type === Comment) return false
-  if (child.type === Text) {
-    const text = child.children as string
-    return text && text.trim().length > 0
-  }
-  return true
-}
 
 const onClick = (event: MouseEvent) => {
   emit('click', event)
@@ -93,7 +85,6 @@ const onClick = (event: MouseEvent) => {
 
 .@{class-prefix-space} {
   display: inline-flex;
-
   --gap: 8px;
   --gap-vertical: var(--gap);
   --gap-horizontal: var(--gap);
@@ -102,7 +93,6 @@ const onClick = (event: MouseEvent) => {
     flex-direction: column;
     > .@{class-prefix-space}-item {
       margin-bottom: var(--gap-vertical);
-
       &:last-child {
         margin-bottom: 0;
       }
@@ -111,7 +101,6 @@ const onClick = (event: MouseEvent) => {
 
   &-horizontal {
     flex-direction: row;
-
     &:not(:empty) {
       margin-right: calc(var(--gap-horizontal) * -1);
     }
@@ -135,15 +124,12 @@ const onClick = (event: MouseEvent) => {
     &-center {
       align-items: center;
     }
-
     &-start {
       align-items: flex-start;
     }
-
     &-end {
       align-items: flex-end;
     }
-
     &-baseline {
       align-items: baseline;
     }
@@ -153,27 +139,21 @@ const onClick = (event: MouseEvent) => {
     &-center {
       justify-content: center;
     }
-
     &-start {
       justify-content: flex-start;
     }
-
     &-end {
       justify-content: flex-end;
     }
-
     &-between {
       justify-content: space-between;
     }
-
     &-around {
       justify-content: space-around;
     }
-
     &-evenly {
       justify-content: space-evenly;
     }
-
     &-stretch {
       justify-content: stretch;
     }

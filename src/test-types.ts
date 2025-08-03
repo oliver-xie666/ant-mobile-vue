@@ -51,10 +51,10 @@ const testButtonProps: ButtonBaseProps = {
 }
 
 // 测试工具类型
-const testAwaitable: Awaitable<string> = 'test'
-const testAwaitablePromise: Awaitable<string> = Promise.resolve('test')
+const _testAwaitable: Awaitable<string> = 'test'
+const _testAwaitablePromise: Awaitable<string> = Promise.resolve('test')
 
-const testDeepPartial: DeepPartial<{ a: { b: { c: string } } }> = {
+const _testDeepPartial: DeepPartial<{ a: { b: { c: string } } }> = {
   a: {
     b: {}
   }
@@ -69,7 +69,7 @@ const testAnimationOptions: AnimationOptions = {
   fillMode: 'both',
 }
 
-const testTransitionOptions: TransitionOptions = {
+const _testTransitionOptions: TransitionOptions = {
   duration: 300,
   timingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
   property: ['opacity', 'transform'],
@@ -225,7 +225,7 @@ const testConfig: Config = {
 }
 
 // 测试Composables类型
-const testUsePropsValueOptions: UsePropsValueOptions<string> = {
+const _testUsePropsValueOptions: UsePropsValueOptions<string> = {
   defaultValue: 'default',
   value: 'controlled',
   onChange: (value) => console.log(value),

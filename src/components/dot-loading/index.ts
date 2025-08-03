@@ -1,4 +1,7 @@
 import DotLoading from './DotLoading.vue'
 
-export type { DotLoadingProps } from './DotLoading.vue'
+// 导出类型
+export type { DotLoadingProps } from './types'
+
 export default DotLoading
+export { DotLoading }

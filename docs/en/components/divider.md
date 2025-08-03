@@ -17,8 +17,7 @@ A divider line separates different content.
 
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
-| content-position | Content position | `'left' \| 'center' \| 'right'` | `'center'` |
-| dashed | Whether line is dashed | `boolean` | `false` |
+| content-position | Content position, only effective when `direction` is `horizontal` | `'left' \| 'center' \| 'right'` | `'center'` |
 | direction | Direction type of line | `'horizontal' \| 'vertical'` | `'horizontal'` |
 
 ### CSS Variables

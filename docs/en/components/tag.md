@@ -17,27 +17,24 @@ Small labels for marking and categorization.
 
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
-| closable | Whether the Tag can be closed | `boolean` | `false` |
-| color | Semantic color | `'default' \| 'primary' \| 'success' \| 'warning' \| 'danger'` | `'default'` |
+| color | Tag color, supports preset colors and custom color values | `'default' \| 'primary' \| 'success' \| 'warning' \| 'danger' \| string` | `'default'` |
 | fill | Fill mode | `'solid' \| 'outline'` | `'solid'` |
 | round | Whether round corner | `boolean` | `false` |
 
 ### Events
 
-| Event | Description | Arguments |
+| Event | Description | Type |
 | --- | --- | --- |
-| close | Callback when close | `() => void` |
+| click | Triggered when tag is clicked | `(event: MouseEvent) => void` |
 
 ### CSS Variables
 
-| Name | Description | Default |
-| --- | --- | --- |
-| --background-color | Background color | `var(--adm-color-fill-content)` |
-| --border-color | Border color | `transparent` |
-| --border-radius | Border radius | `2px` |
-| --font-size | Font size | `12px` |
-| --padding | Padding | `2px 6px` |
-| --text-color | Text color | `var(--adm-color-text)` |
+| Name | Description | Default | Global |
+| --- | --- | --- | --- |
+| --background-color | Background color of the tag | If `fill=solid`, default value is the color of the `color` prop. If `fill=outline`, default value is `transparent`. | - |
+| --border-color | Border color of the tag | Color of the `color` prop. | - |
+| --border-radius | Border radius of the tag when `round=false` | `2px` | `--adm-tag-border-radius` |
+| --text-color | Text color of the tag | If `fill=solid`, default value is `#ffffff`. If `fill=outline`, default value is the color of the `color` prop. | - |
 
 ## Theming
 
@@ -47,6 +44,4 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default |
 | --- | --- |
-| --adm-tag-padding | `2px 6px` |
 | --adm-tag-border-radius | `2px` |
-| --adm-tag-font-size | `12px` |

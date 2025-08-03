@@ -63,6 +63,9 @@ export interface ButtonProps extends /* @vue-ignore */ NativeProps<
   onTouchEnd?: (event: TouchEvent) => void
 }
 
+// 显式导出类型，使其可以被外部导入
+export type { ButtonProps }
+
 const props = withDefaults(defineProps<ButtonProps>(), {
   color: 'default',
   fill: 'solid',

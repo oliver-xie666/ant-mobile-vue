@@ -33,8 +33,8 @@ export interface InputBaseProps extends ComponentProps {
 
 // 选择器组件基础类型
 export interface PickerBaseProps extends ComponentProps {
-  value?: any
-  defaultValue?: any
+  value?: unknown
+  defaultValue?: unknown
   placeholder?: string
   multiple?: boolean
 }
@@ -60,21 +60,21 @@ export interface ListBaseProps extends ComponentProps {
 export type IconComponent = Component | VNode | string
 
 // 渲染函数类型
-export type RenderFunction<T = any> = (params: T) => VNode | string | number
+export type RenderFunction<T = unknown> = (params: T) => VNode | string | number
 
 // 组件插槽类型
 export interface ComponentSlots {
   default?: () => VNode | VNode[]
-  [key: string]: ((...args: any[]) => VNode | VNode[]) | undefined
+  [key: string]: ((...args: unknown[]) => VNode | VNode[]) | undefined
 }
 
 // 组件事件类型
 export interface ComponentEmits {
-  [key: string]: (...args: any[]) => boolean | void
+  [key: string]: (...args: unknown[]) => boolean | void
 }
 
 // 组件实例类型
 export interface ComponentInstance {
   $el: HTMLElement
-  [key: string]: any
+  [key: string]: unknown
 }

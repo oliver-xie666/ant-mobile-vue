@@ -61,6 +61,9 @@ export interface DotLoadingProps extends /* @vue-ignore */ NativeProps {
   color?: 'default' | 'primary' | 'white' | (string & {})
 }
 
+// 显式导出类型，使其可以被外部导入
+export type { DotLoadingProps }
+
 const props = withDefaults(defineProps<DotLoadingProps>(), {
   color: 'default',
 })
