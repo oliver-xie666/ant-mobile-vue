@@ -183,6 +183,69 @@
 
 ---
 
+## 🌐 全局基础设施迁移计划
+
+> **关键优先级**: 在继续迁移更多组件之前，必须先完善全局基础设施
+
+### 🔥 **第一优先级 - 立即启动** (预计1-2周)
+
+#### 📋 国际化系统建设 ✅ 已完成
+- [x] **建立国际化目录结构**
+  - [x] 创建 `src/locales/` 目录
+  - [x] 迁移 `base.ts` 英文基础语言包
+  - [x] 迁移 `zh-CN.ts` 中文语言包  
+  - [x] 迁移 `en-US.ts` 英文语言包
+  - [x] 创建 `index.ts` 统一导出
+
+#### 🛠 核心工具函数迁移 ✅ 已完成
+- [x] **基础工具函数补全**
+  - [x] `can-use-dom.ts` ✅ 已有
+  - [x] `merge-locale.ts` - 国际化合并工具
+  - [x] `replace-message.ts` - 消息模板替换
+  - [x] `noop.ts` - 空函数
+  - [x] `sleep.ts` - 延迟函数
+  - [ ] `validate.ts` - 验证工具 (下阶段)
+  - [ ] `native-props.ts` - 优化现有实现 (下阶段)
+
+#### ⚙️ ConfigProvider 组件 ✅ 已完成
+- [x] **全局配置系统**
+  - [x] 创建 `src/components/config-provider/` 目录
+  - [x] 实现 `ConfigProvider.vue` 组件
+  - [x] 创建 `useConfig` composable
+  - [x] 支持国际化配置
+  - [x] 支持组件个性化配置
+  - [x] 建立默认配置系统
+
+### 📈 **第二优先级 - 紧随其后** (预计1-2周)
+
+#### 🎭 Vue3 Composables 开发
+- [ ] **Vue版本的核心hooks**
+  - [ ] `useConfig` - 配置系统hook
+  - [ ] `usePropsValue` - 受控组件hook
+  - [ ] `useRefState` - 状态管理hook
+  - [ ] `useInitialized` - 初始化检查hook
+  - [ ] `useLockScroll` - 滚动锁定hook
+  - [ ] `useTouch` - 触摸事件hook
+
+#### 📋 全局类型定义完善
+- [ ] **类型系统补全**
+  - [ ] `Locale` 类型定义
+  - [ ] `Config` 配置类型
+  - [ ] `NativeProps` 通用Props类型
+  - [ ] 组件通用类型抽象
+  - [ ] 工具函数类型定义
+
+### 📊 **第三优先级 - 后续完善** (预计1周)
+
+#### 🎨 主题系统扩展
+- [ ] **主题配置增强**
+  - [ ] 扩展CSS变量系统
+  - [ ] 建立主题切换机制
+  - [ ] 支持暗色模式
+  - [ ] 创建主题配置工具
+
+---
+
 ## 📦 组件迁移计划
 
 > **重要**: 每次迁移新组件前，必须重新检索源项目和当前项目的最新状态

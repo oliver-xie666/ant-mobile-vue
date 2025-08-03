@@ -1,3 +1,7 @@
+// 全局配置
+export { default as ConfigProvider, setDefaultConfig, getDefaultConfig, useConfig } from './config-provider'
+export type { Config, ConfigProviderProps } from './config-provider'
+
 // 基础组件
 export { default as Button } from './button'
 export type { ButtonProps } from './button'
