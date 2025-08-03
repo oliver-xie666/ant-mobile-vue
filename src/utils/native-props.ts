@@ -1,11 +1,9 @@
-import type { CSSProperties, VNode } from 'vue'
+import type { VNode } from 'vue'
 import { cloneVNode } from 'vue'
+import type { NativeProps } from '../types/native-props'
 
-export type NativeProps<S extends string = never> = {
-  class?: string
-  style?: CSSProperties & Partial<Record<S, string>>
-  tabindex?: number
-} & Record<`data-${string}` | `aria-${string}`, string>
+// 重新导出类型以保持向后兼容
+export type { NativeProps, BaseProps, WithNativePropsOptions } from '../types/native-props'
 
 export function withNativeProps<T extends Record<string, unknown>>(
   props: T & NativeProps,

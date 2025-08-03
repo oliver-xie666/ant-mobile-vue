@@ -9,3 +9,18 @@ export * from './utils/native-props'
 export * from './utils/with-default-props'
 export * from './utils/validate'
 export * from './utils/can-use-dom'
+export * from './utils/merge-locale'
+export * from './utils/replace-message'
+export * from './utils/noop'
+export * from './utils/sleep'
+export * from './utils/get-scroll-parent'
+export * from './utils/supports-passive'
+
+// 导出 Composables
+export * from './composables'
+
+// 导出国际化
+export * from './locales'
+
+// 导出类型定义
+export * from './types'
