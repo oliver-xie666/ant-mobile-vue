@@ -71,6 +71,7 @@ export default defineConfig({
                 { text: 'SpinLoading 旋转加载', link: '/zh/components/spin-loading' },
                 { text: 'Toast 轻提示', link: '/zh/components/toast' },
                 { text: 'Dialog 对话框', link: '/zh/components/dialog' },
+                { text: 'Modal 弹窗', link: '/zh/components/modal' },
                 { text: 'Mask 背景蒙层', link: '/zh/components/mask' }
               ]
             },
@@ -150,6 +151,7 @@ export default defineConfig({
                 { text: 'SpinLoading', link: '/en/components/spin-loading' },
                 { text: 'Toast', link: '/en/components/toast' },
                 { text: 'Dialog', link: '/en/components/dialog' },
+                { text: 'Modal', link: '/en/components/modal' },
                 { text: 'Mask', link: '/en/components/mask' }
               ]
             },

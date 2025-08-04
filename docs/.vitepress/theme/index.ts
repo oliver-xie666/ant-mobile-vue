@@ -14,6 +14,7 @@ import AutoCenter from '../../../src/components/auto-center/AutoCenter.vue'
 import Mask from '../../../src/components/mask/Mask.vue'
 import CenterPopup from '../../../src/components/center-popup/CenterPopup.vue'
 import Dialog from '../../../src/components/dialog'
+import Modal from '../../../src/components/modal'
 import Toast from '../../../src/components/toast'
 
 // 导入样式
@@ -70,10 +71,12 @@ export default {
     app.component('Mask', Mask)
     app.component('CenterPopup', CenterPopup)
     app.component('Dialog', Dialog)
+    app.component('Modal', Modal)
 
-    // Toast 和 Dialog 是指令式API，添加到全局属性
+    // Toast、Dialog 和 Modal 是指令式API，添加到全局属性
     app.config.globalProperties.$toast = Toast
     app.config.globalProperties.$dialog = Dialog
+    app.config.globalProperties.$modal = Modal
 
     app.component('DemoBlock', DemoBlock)
     app.component('CodeDemo', CodeDemo)

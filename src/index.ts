@@ -9,6 +9,7 @@ export { default as Dialog } from './components/dialog'
 export { default as DotLoading } from './components/dot-loading'
 export { default as Divider } from './components/divider'
 export { default as Mask } from './components/mask'
+export { default as Modal } from './components/modal'
 export { default as Space } from './components/space'
 export { default as SpinLoading } from './components/spin-loading'
 export { default as Tag } from './components/tag'
@@ -22,6 +23,7 @@ export type { DialogProps, Action, DialogShowProps, DialogShowHandler, DialogAle
 export type { DotLoadingProps } from './components/dot-loading/types'
 export type { DividerProps } from './components/divider/types'
 export type { MaskProps, PropagationEvent } from './components/mask/types'
+export type { ModalProps, Action as ModalAction, ModalShowProps, ModalShowHandler, ModalAlertProps, ModalConfirmProps } from './components/modal/types'
 export type { SpaceProps } from './components/space/types'
 export type { SpinLoadingProps } from './components/spin-loading/types'
 export type { TagProps } from './components/tag/types'
@@ -58,11 +60,12 @@ import Dialog from './components/dialog'
 import DotLoading from './components/dot-loading'
 import Divider from './components/divider'
 import Mask from './components/mask'
+import Modal from './components/modal'
 import Space from './components/space'
 import SpinLoading from './components/spin-loading'
 import Tag from './components/tag'
 
-const components = [AutoCenter, Button, CenterPopup, Dialog, DotLoading, Divider, Mask, Space, SpinLoading, Tag]
+const components = [AutoCenter, Button, CenterPopup, Dialog, DotLoading, Divider, Mask, Modal, Space, SpinLoading, Tag]
 
 export const install = (app: App): App => {
   components.forEach(component => {
