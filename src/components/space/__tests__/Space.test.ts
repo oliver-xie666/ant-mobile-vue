@@ -178,7 +178,7 @@ describe('Space', () => {
       props: {
         direction: 'horizontal',
         align: 'center',
-        justify: 'space-between',
+        justify: 'between',
       },
       slots: {
         default: '<div>Item 1</div><div>Item 2</div>',

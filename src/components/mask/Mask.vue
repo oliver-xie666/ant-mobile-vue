@@ -10,8 +10,8 @@
       <div
         v-show="visible"
         ref="maskRef"
-        :class="[classPrefix, $attrs.class]"
-        :style="[maskStyle, $attrs.style]"
+        :class="[classPrefix, $attrs.class].filter(Boolean) as string[]"
+        :style="[maskStyle, $attrs.style].filter(Boolean) as any[]"
         aria-hidden="true"
         @click="handleMaskClick"
         v-bind="stopPropagationHandlers"
@@ -76,7 +76,7 @@ export interface MaskProps extends /* @vue-ignore */ NativeProps<'--z-index'> {
 }
 
 // 显式导出类型，使其可以被外部导入
-export type { MaskProps }
+// 类型由 index.ts 统一导出
 
 const props = withDefaults(defineProps<MaskProps>(), {
   visible: true,
@@ -99,7 +99,7 @@ const config = useConfig()
 const locale = computed(() => config?.locale)
 
 // 组件引用
-const maskRef = ref<HTMLElement>()
+const maskRef = ref<HTMLElement | null>(null)
 
 // 滚动锁定
 const shouldLockScroll = computed(() => props.visible && props.disableBodyScroll)

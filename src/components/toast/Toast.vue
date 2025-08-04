@@ -56,8 +56,8 @@ export interface ToastProps {
   stopPropagation?: PropagationEvent[]
 }
 
-// 显式导出类型
-export type { ToastProps }
+// 显式导出类型，使其可以被外部导入
+// 类型由 index.ts 统一导出
 
 const props = withDefaults(defineProps<ToastProps>(), {
   maskClickable: true,
@@ -108,7 +108,7 @@ const mainClass = computed(() => [
 const maskClass = computed(() => [
   `${classPrefix}-mask`,
   props.maskClassName
-])
+].filter(Boolean) as string[])
 
 // Mask的样式
 const maskStyle = computed((): CSSProperties => ({

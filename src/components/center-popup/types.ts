@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'vue'
+import type { CSSProperties, Component } from 'vue'
 import type { GetContainer } from '../../utils/render-to-container'
 import type { PropagationEvent } from '../../utils/with-stop-propagation'
 import type { NativeProps } from '../../utils/native-props'

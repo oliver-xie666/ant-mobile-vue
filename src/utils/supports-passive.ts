@@ -10,6 +10,6 @@ if (canUseDom) {
         supportsPassive = true
       },
     })
-    window.addEventListener('test-passive', null as EventListener, opts)
+    window.addEventListener('test-passive', null as unknown as EventListener, opts)
   } catch {}
 }

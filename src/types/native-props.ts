@@ -12,7 +12,6 @@ export type NativeHTMLProps = {
   id?: string
   title?: string
   role?: string
-  'data-testid'?: string
 } & Record<`data-${string}`, string | number | boolean> & Record<`aria-${string}`, string | number | boolean>
 
 // 组件基础Props类型

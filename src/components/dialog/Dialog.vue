@@ -1,6 +1,6 @@
 <template>
   <CenterPopup
-    :class="['adm-dialog', className]"
+    :class="['adm-dialog', $attrs.class].filter(Boolean) as string[]"
     :style="style"
     :afterClose="afterClose"
     :afterShow="afterShow"
@@ -12,7 +12,7 @@
       'adm-dialog-body',
       image && 'adm-dialog-with-image',
       bodyClassName
-    ]"
+    ].filter(Boolean).join(' ')"
     :maskStyle="maskStyle"
     :maskClassName="maskClassName"
     :stopPropagation="stopPropagation"
@@ -97,9 +97,7 @@ defineOptions({
   inheritAttrs: false
 })
 
-interface Props extends DialogProps {
-  _?: never
-}
+type Props = DialogProps
 
 const props = withDefaults(defineProps<Props>(), {
   actions: () => [] as Action[],

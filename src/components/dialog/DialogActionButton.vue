@@ -2,12 +2,10 @@
   <Button
     :key="action.key"
     @click="handleClick"
-    :class="[
-      'adm-dialog-button',
-      {
-        'adm-dialog-button-bold': action.bold
-      }
-    ]"
+    :class="{
+      'adm-dialog-button': true,
+      'adm-dialog-button-bold': !!action.bold
+    }"
     fill="none"
     shape="rectangular"
     block

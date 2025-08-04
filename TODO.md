@@ -1135,6 +1135,7 @@ src/
    - 再进行样式迁移 (像素级对比)
    - 添加 TypeScript 类型
    - **必须运行并修复所有lint检查** (eslint, stylelint, prettier)
+   - **必须运行并修复所有TypeScript类型错误** (`pnpm run type-check`)
    - 编写单元测试
    - 完善文档和示例
 
@@ -1142,6 +1143,7 @@ src/
    - 在真实场景中测试
    - 对比源组件确保一致性
    - 更新文档
+   - **提交前检查**: 运行 `pnpm run type-check`、`pnpm run lint` 和 `pnpm run stylelint` 确保无错误
    - 提交代码并更新此 TODO
 
 ---

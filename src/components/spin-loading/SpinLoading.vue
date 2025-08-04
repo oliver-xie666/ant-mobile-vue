@@ -33,7 +33,7 @@ export interface SpinLoadingProps extends /* @vue-ignore */ NativeProps<'--color
 }
 
 // 显式导出类型，使其可以被外部导入
-export type { SpinLoadingProps }
+// 类型由 index.ts 统一导出
 
 const props = withDefaults(defineProps<SpinLoadingProps>(), {
   color: 'default',

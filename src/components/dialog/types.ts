@@ -36,13 +36,10 @@ export interface DialogProps extends /* @vue-ignore */ NativeProps {
   closeOnMaskClick?: boolean
 }
 
-export interface DialogShowProps extends Omit<DialogProps, 'visible' | 'destroyOnClose' | 'forceRender'> {
-  _?: never
-}
+export type DialogShowProps = Omit<DialogProps, 'visible' | 'destroyOnClose' | 'forceRender'>
 
 export interface DialogShowHandler {
   close: () => void
-  _?: never
 }
 
 export interface DialogAlertProps extends Omit<DialogProps, 'visible' | 'closeOnAction' | 'actions'> {

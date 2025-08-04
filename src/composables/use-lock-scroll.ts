@@ -1,4 +1,4 @@
-import { watch, type Ref } from 'vue'
+import { watch, unref, type Ref } from 'vue'
 import { useTouch } from './use-touch'
 import { getScrollParent } from '../utils/get-scroll-parent'
 import { supportsPassive } from '../utils/supports-passive'
@@ -24,7 +24,7 @@ function getScrollableElement(el: HTMLElement | null) {
 // 移植自vant：https://github.com/youzan/vant/blob/HEAD/src/composables/use-lock-scroll.ts
 export function useLockScroll(
   rootRef: Ref<HTMLElement | null>,
-  shouldLock: boolean | 'strict'
+  shouldLock: boolean | 'strict' | Ref<boolean | 'strict'>
 ) {
   const touch = useTouch()
 
@@ -39,7 +39,7 @@ export function useLockScroll(
     if (!el) return
 
     // This has perf cost but we have to compatible with iOS 12
-    if (shouldLock === 'strict') {
+    if (unref(shouldLock) === 'strict') {
       const scrollableParent = getScrollableElement(event.target as HTMLElement)
       if (
         scrollableParent === document.body ||
@@ -102,7 +102,7 @@ export function useLockScroll(
 
   // 使用Vue的watch来监听shouldLock变化
   watch(
-    () => shouldLock,
+    () => unref(shouldLock),
     (newValue, oldValue) => {
       if (newValue) {
         lock()
@@ -115,7 +115,7 @@ export function useLockScroll(
 
   // 返回清理函数，用于组件销毁时调用
   return () => {
-    if (shouldLock) {
+    if (unref(shouldLock)) {
       unlock()
     }
   }

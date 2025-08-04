@@ -13,7 +13,7 @@
     :class="[
       'adm-center-popup-wrap',
       maskClassName
-    ]"
+    ].filter(Boolean) as string[]"
     :style="maskStyle"
     @click="onMaskClick"
     @close="handleClose"
@@ -22,12 +22,12 @@
       v-if="mergedVisible || !destroyOnClose"
       :class="[
         'adm-center-popup',
-        className
-      ]"
+        $attrs.class
+      ].filter(Boolean) as string[]"
       :style="[popupStyle, style]"
-      @click="withStopPropagation(['click'], $event)"
+      v-bind="withStopPropagation(['click'])"
       :role="role"
-      :aria-label="$attrs['aria-label']"
+      :aria-label="($attrs['aria-label'] as string) || undefined"
     >
       <div
         v-if="showCloseButton"
@@ -50,7 +50,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch, type CSSProperties } from 'vue'
+import { computed, ref, watch, type CSSProperties, type Component } from 'vue'
 import Mask from '../mask'
 import CloseIcon from './CloseIcon.vue'
 import { useShouldRender } from '../../utils/should-render'

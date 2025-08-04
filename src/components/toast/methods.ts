@@ -1,4 +1,4 @@
-import { createApp, h } from 'vue'
+import { createApp, h, type VNode } from 'vue'
 import Toast from './Toast.vue'
 import type { ToastShowProps, ToastHandler } from './types'
 import { canUseDom } from '../../utils/can-use-dom'
@@ -11,7 +11,7 @@ let currentTimeout: number | null = null
 // 默认配置
 const defaultProps = {
   duration: 2000,
-  position: 'center' as const,
+  position: 'center' as 'center' | 'top' | 'bottom',
   maskClickable: true,
 }
 
@@ -63,25 +63,26 @@ export function show(p: ToastShowProps | string): ToastHandler {
   currentContainer = document.createElement('div')
   document.body.appendChild(currentContainer)
 
+  // 创建handlers
+  const handleClose = () => {
+    cleanup()
+  }
+
+  const handleAfterClose = () => {
+    props.afterClose?.()
+  }
+
   // 创建Toast包装组件
   const ToastWrapper = {
     setup() {
-      const handleClose = () => {
-        cleanup()
-      }
-
-      const handleAfterClose = () => {
-        props.afterClose?.()
-      }
-
       return { handleClose, handleAfterClose }
     },
-    render() {
+    render(): VNode {
       return h(Toast, {
         ...props,
         visible: true,
-        onClose: this.handleClose,
-        afterClose: this.handleAfterClose,
+        onClose: handleClose,
+        afterClose: handleAfterClose,
       })
     },
   }

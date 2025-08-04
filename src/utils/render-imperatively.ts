@@ -1,5 +1,5 @@
 import { createApp, ref, nextTick, h } from 'vue'
-import type { Component } from 'vue'
+import type { Component, VNode } from 'vue'
 import { canUseDom } from './can-use-dom'
 
 export interface ImperativeProps {

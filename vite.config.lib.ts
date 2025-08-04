@@ -31,11 +31,11 @@ export default defineConfig({
         },
         // 确保样式文件也能正确输出
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-            const name = assetInfo.name.replace('.css', '')
+          if (assetInfo.names && assetInfo.names[0]?.endsWith('.css')) {
+            const name = assetInfo.names[0].replace('.css', '')
             return `${name}/index.css`
           }
-          return assetInfo.name || 'assets/[name].[ext]'
+          return assetInfo.names?.[0] || 'assets/[name].[ext]'
         },
       },
     },

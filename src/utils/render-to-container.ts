@@ -1,5 +1,5 @@
-import { createApp, App } from 'vue'
-import type { Component } from 'vue'
+import { createApp } from 'vue'
+import type { Component, App } from 'vue'
 import { canUseDom } from './can-use-dom'
 
 export type GetContainer = HTMLElement | (() => HTMLElement) | null
