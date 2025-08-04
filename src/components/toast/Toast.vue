@@ -66,7 +66,7 @@ const props = withDefaults(defineProps<ToastProps>(), {
   visible: false,
 })
 
-const emit = defineEmits<{
+defineEmits<{
   close: []
 }>()
 

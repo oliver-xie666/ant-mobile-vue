@@ -1,4 +1,5 @@
-import { createApp, ref, nextTick, h, Component } from 'vue'
+import { createApp, ref, nextTick, h } from 'vue'
+import type { Component } from 'vue'
 import { canUseDom } from './can-use-dom'
 
 export interface ImperativeProps {
@@ -66,14 +67,21 @@ export function renderImperatively(
         handleAfterClose,
       }
     },
-    render() {
+    render(): VNode {
       const { component: Comp, props: compProps, visible } = state.value
 
       return h(Comp, {
         ...compProps,
         visible,
-        onClose: this.handleClose,
-        afterClose: this.handleAfterClose,
+        onClose: () => {
+          state.value.visible = false
+          state.value.onClose?.()
+        },
+        afterClose: () => {
+          app.unmount()
+          document.body.removeChild(container)
+          state.value.afterClose?.()
+        },
       })
     },
   }

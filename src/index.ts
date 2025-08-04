@@ -4,6 +4,8 @@ import './styles'
 // 组件导出（支持按需引入）
 export { default as AutoCenter } from './components/auto-center'
 export { default as Button } from './components/button'
+export { default as CenterPopup } from './components/center-popup'
+export { default as Dialog } from './components/dialog'
 export { default as DotLoading } from './components/dot-loading'
 export { default as Divider } from './components/divider'
 export { default as Mask } from './components/mask'
@@ -15,6 +17,8 @@ export { default as Toast } from './components/toast'
 // 类型导出
 export type { AutoCenterProps } from './components/auto-center/types'
 export type { ButtonProps } from './components/button/types'
+export type { CenterPopupProps } from './components/center-popup/types'
+export type { DialogProps, Action, DialogShowProps, DialogShowHandler, DialogAlertProps, DialogConfirmProps } from './components/dialog/types'
 export type { DotLoadingProps } from './components/dot-loading/types'
 export type { DividerProps } from './components/divider/types'
 export type { MaskProps, PropagationEvent } from './components/mask/types'
@@ -49,6 +53,8 @@ export * from './types'
 import type { App } from 'vue'
 import AutoCenter from './components/auto-center'
 import Button from './components/button'
+import CenterPopup from './components/center-popup'
+import Dialog from './components/dialog'
 import DotLoading from './components/dot-loading'
 import Divider from './components/divider'
 import Mask from './components/mask'
@@ -56,7 +62,7 @@ import Space from './components/space'
 import SpinLoading from './components/spin-loading'
 import Tag from './components/tag'
 
-const components = [AutoCenter, Button, DotLoading, Divider, Mask, Space, SpinLoading, Tag]
+const components = [AutoCenter, Button, CenterPopup, Dialog, DotLoading, Divider, Mask, Space, SpinLoading, Tag]
 
 export const install = (app: App): App => {
   components.forEach(component => {

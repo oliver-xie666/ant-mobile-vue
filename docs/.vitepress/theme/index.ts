@@ -12,6 +12,8 @@ import Tag from '../../../src/components/tag/Tag.vue'
 import SpinLoading from '../../../src/components/spin-loading/SpinLoading.vue'
 import AutoCenter from '../../../src/components/auto-center/AutoCenter.vue'
 import Mask from '../../../src/components/mask/Mask.vue'
+import CenterPopup from '../../../src/components/center-popup/CenterPopup.vue'
+import Dialog from '../../../src/components/dialog'
 import Toast from '../../../src/components/toast'
 
 // 导入样式
@@ -66,9 +68,12 @@ export default {
     app.component('SpinLoading', SpinLoading)
     app.component('AutoCenter', AutoCenter)
     app.component('Mask', Mask)
+    app.component('CenterPopup', CenterPopup)
+    app.component('Dialog', Dialog)
 
-    // Toast 是指令式API，添加到全局属性
+    // Toast 和 Dialog 是指令式API，添加到全局属性
     app.config.globalProperties.$toast = Toast
+    app.config.globalProperties.$dialog = Dialog
 
     app.component('DemoBlock', DemoBlock)
     app.component('CodeDemo', CodeDemo)
