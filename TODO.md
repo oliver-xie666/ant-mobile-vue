@@ -360,7 +360,7 @@
   - [x] 文档
 
 ### 第三批 - 表单组件 (优先级: 高)
-- [ ] **Input 输入框**
+- [ ] **Input 输入框** ⏳
   - [ ] 组件逻辑迁移
   - [ ] 样式迁移 (pixel perfect)
   - [ ] TypeScript 类型定义
@@ -1143,7 +1143,7 @@ src/
    - 在真实场景中测试
    - 对比源组件确保一致性
    - 更新文档
-   - **提交前检查**: 运行 `pnpm run type-check`、`pnpm run lint` 和 `pnpm run stylelint` 确保无错误
+   - **提交前检查**: 运行 `pnpm run type-check`、`pnpm run lint`、`pnpm run stylelint` 和 `pnpm run test:unit` 确保无错误
    - 提交代码并更新此 TODO
 
 ---

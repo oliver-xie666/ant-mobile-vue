@@ -76,6 +76,12 @@ export default defineConfig({
               ]
             },
             {
+              text: '表单',
+              items: [
+                { text: 'Input 输入框', link: '/zh/components/input' }
+              ]
+            },
+            {
               text: '数据展示',
               items: [
                 { text: 'Tag 标签', link: '/zh/components/tag' }
@@ -153,6 +159,12 @@ export default defineConfig({
                 { text: 'Dialog', link: '/en/components/dialog' },
                 { text: 'Modal', link: '/en/components/modal' },
                 { text: 'Mask', link: '/en/components/mask' }
+              ]
+            },
+            {
+              text: 'Form',
+              items: [
+                { text: 'Input', link: '/en/components/input' }
               ]
             },
             {

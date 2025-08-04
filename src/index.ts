@@ -8,6 +8,7 @@ export { default as CenterPopup } from './components/center-popup'
 export { default as Dialog } from './components/dialog'
 export { default as DotLoading } from './components/dot-loading'
 export { default as Divider } from './components/divider'
+export { default as Input } from './components/input'
 export { default as Mask } from './components/mask'
 export { default as Modal } from './components/modal'
 export { default as Space } from './components/space'
@@ -22,6 +23,7 @@ export type { CenterPopupProps } from './components/center-popup/types'
 export type { DialogProps, Action, DialogShowProps, DialogShowHandler, DialogAlertProps, DialogConfirmProps } from './components/dialog/types'
 export type { DotLoadingProps } from './components/dot-loading/types'
 export type { DividerProps } from './components/divider/types'
+export type { InputProps, InputRef } from './components/input/types'
 export type { MaskProps, PropagationEvent } from './components/mask/types'
 export type { ModalProps, Action as ModalAction, ModalShowProps, ModalShowHandler, ModalAlertProps, ModalConfirmProps } from './components/modal/types'
 export type { SpaceProps } from './components/space/types'
@@ -59,13 +61,14 @@ import CenterPopup from './components/center-popup'
 import Dialog from './components/dialog'
 import DotLoading from './components/dot-loading'
 import Divider from './components/divider'
+import Input from './components/input'
 import Mask from './components/mask'
 import Modal from './components/modal'
 import Space from './components/space'
 import SpinLoading from './components/spin-loading'
 import Tag from './components/tag'
 
-const components = [AutoCenter, Button, CenterPopup, Dialog, DotLoading, Divider, Mask, Modal, Space, SpinLoading, Tag]
+const components = [AutoCenter, Button, CenterPopup, Dialog, DotLoading, Divider, Input, Mask, Modal, Space, SpinLoading, Tag]
 
 export const install = (app: App): App => {
   components.forEach(component => {
@@ -80,5 +83,5 @@ export const install = (app: App): App => {
 // 默认导出（支持app.use()）
 export default {
   install,
-  version: '0.0.0',
+  version: '0.0.1',
 }
