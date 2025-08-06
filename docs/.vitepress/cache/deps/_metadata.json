@@ -1,97 +1,73 @@
 {
-  "hash": "9d567cd5",
-  "configHash": "636deff5",
-  "lockfileHash": "ab3382ce",
-  "browserHash": "c2c46297",
+  "hash": "1df81205",
+  "configHash": "828f3d57",
+  "lockfileHash": "7e5c4bd0",
+  "browserHash": "f21b5b41",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.5.18_typescript@5.8.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "307c1650",
+      "fileHash": "785b5c1b",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.7.7/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "71c6a4ae",
+      "fileHash": "0eef64f0",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/.pnpm/@vueuse+core@12.8.2_typescript@5.8.3/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "7441b80e",
+      "fileHash": "aa532c58",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/.pnpm/@vueuse+integrations@12.8.2_df663f4367436853847d29eaaab201f6/node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "c5605202",
+      "fileHash": "6ae2a51f",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "cc7b0e34",
+      "fileHash": "79da3f53",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/.pnpm/minisearch@7.1.2/node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "dfb342c3",
+      "fileHash": "8ec1287c",
       "needsInterop": false
-    },
-    "prismjs": {
-      "src": "../../../../../node_modules/.pnpm/prismjs@1.30.0/node_modules/prismjs/prism.js",
-      "file": "prismjs.js",
-      "fileHash": "4fe13390",
-      "needsInterop": true
-    },
-    "prismjs/components/prism-javascript": {
-      "src": "../../../../../node_modules/.pnpm/prismjs@1.30.0/node_modules/prismjs/components/prism-javascript.js",
-      "file": "prismjs_components_prism-javascript.js",
-      "fileHash": "69d39cdc",
-      "needsInterop": true
-    },
-    "prismjs/components/prism-typescript": {
-      "src": "../../../../../node_modules/.pnpm/prismjs@1.30.0/node_modules/prismjs/components/prism-typescript.js",
-      "file": "prismjs_components_prism-typescript.js",
-      "fileHash": "69fd32dd",
-      "needsInterop": true
-    },
-    "prismjs/components/prism-markup-templating": {
-      "src": "../../../../../node_modules/.pnpm/prismjs@1.30.0/node_modules/prismjs/components/prism-markup-templating.js",
-      "file": "prismjs_components_prism-markup-templating.js",
-      "fileHash": "4ebbd0c4",
-      "needsInterop": true
-    },
-    "prismjs/components/prism-markup": {
-      "src": "../../../../../node_modules/.pnpm/prismjs@1.30.0/node_modules/prismjs/components/prism-markup.js",
-      "file": "prismjs_components_prism-markup.js",
-      "fileHash": "dbc58d3b",
-      "needsInterop": true
     },
     "highlight.js/lib/core": {
       "src": "../../../../node_modules/.pnpm/highlight.js@11.11.1/node_modules/highlight.js/es/core.js",
       "file": "highlight__js_lib_core.js",
-      "fileHash": "1087ab4a",
+      "fileHash": "620eb85e",
       "needsInterop": false
     },
     "highlight.js/lib/languages/xml": {
       "src": "../../../../node_modules/.pnpm/highlight.js@11.11.1/node_modules/highlight.js/es/languages/xml.js",
       "file": "highlight__js_lib_languages_xml.js",
-      "fileHash": "24f2cdbe",
+      "fileHash": "d11e0b8a",
       "needsInterop": false
     },
     "highlight.js/lib/languages/typescript": {
       "src": "../../../../node_modules/.pnpm/highlight.js@11.11.1/node_modules/highlight.js/es/languages/typescript.js",
       "file": "highlight__js_lib_languages_typescript.js",
-      "fileHash": "061dd12e",
+      "fileHash": "3879d677",
       "needsInterop": false
     },
     "highlight.js/lib/languages/javascript": {
       "src": "../../../../node_modules/.pnpm/highlight.js@11.11.1/node_modules/highlight.js/es/languages/javascript.js",
       "file": "highlight__js_lib_languages_javascript.js",
-      "fileHash": "224c2366",
+      "fileHash": "29a969e4",
+      "needsInterop": false
+    },
+    "runes2": {
+      "src": "../../../../node_modules/.pnpm/runes2@1.1.4/node_modules/runes2/dist/index.esm.mjs",
+      "file": "runes2.js",
+      "fileHash": "ec0c65b8",
       "needsInterop": false
     }
   },

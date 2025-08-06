@@ -22,6 +22,7 @@ const components = [
   'space',
   'spin-loading',
   'tag',
+  'text-area',
   'toast'
 ]
 

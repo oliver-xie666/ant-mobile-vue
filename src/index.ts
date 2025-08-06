@@ -14,6 +14,7 @@ export { default as Modal } from './components/modal'
 export { default as Space } from './components/space'
 export { default as SpinLoading } from './components/spin-loading'
 export { default as Tag } from './components/tag'
+export { default as TextArea } from './components/text-area'
 export { default as Toast } from './components/toast'
 export { default as ConfigProvider } from './components/config-provider'
 
@@ -30,6 +31,7 @@ export type { ModalProps, Action as ModalAction, ModalShowProps, ModalShowHandle
 export type { SpaceProps } from './components/space/types'
 export type { SpinLoadingProps } from './components/spin-loading/types'
 export type { TagProps } from './components/tag/types'
+export type { TextAreaProps, TextAreaRef } from './components/text-area/types'
 export type { ToastProps, ToastShowProps, ToastHandler } from './components/toast/types'
 export type { ConfigProviderProps, Config } from './components/config-provider/types'
 
@@ -69,9 +71,10 @@ import Modal from './components/modal'
 import Space from './components/space'
 import SpinLoading from './components/spin-loading'
 import Tag from './components/tag'
+import TextArea from './components/text-area'
 import ConfigProvider from './components/config-provider'
 
-const components = [AutoCenter, Button, CenterPopup, Dialog, DotLoading, Divider, Input, Mask, Modal, Space, SpinLoading, Tag, ConfigProvider]
+const components = [AutoCenter, Button, CenterPopup, Dialog, DotLoading, Divider, Input, Mask, Modal, Space, SpinLoading, Tag, TextArea, ConfigProvider]
 
 export const install = (app: App): App => {
   components.forEach(component => {

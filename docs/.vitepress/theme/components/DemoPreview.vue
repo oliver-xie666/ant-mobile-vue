@@ -27,8 +27,15 @@ const loadDemoComponent = async () => {
     // 转换demo路径：button/demos/demo1 -> button/demos/demo1.vue
     const targetPath = demoPath.includes('.vue') ? demoPath : `${demoPath}.vue`
 
-    // 查找匹配的demo组件
+    // 获取当前页面语言
+    const currentLang = typeof window !== 'undefined' ?
+      (window.location.pathname.startsWith('/en/') ? 'en' : 'zh') : 'zh'
+
+    // 查找匹配的demo组件，优先选择当前语言的demo文件
     const componentKey = Object.keys(demoModules).find(key => {
+      const normalizedKey = key.replace(/^\.\.\/\.\.\/\.\.\//,'').replace(/^(zh|en)\/components\//,'')
+      return normalizedKey === targetPath && key.includes(`/${currentLang}/components/`)
+    }) || Object.keys(demoModules).find(key => {
       const normalizedKey = key.replace(/^\.\.\/\.\.\/\.\.\//,'').replace(/^(zh|en)\/components\//,'')
       return normalizedKey === targetPath
     })

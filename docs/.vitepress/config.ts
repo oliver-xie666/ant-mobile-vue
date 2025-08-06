@@ -5,7 +5,8 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('../../src', import.meta.url))
+        '@': fileURLToPath(new URL('../../src', import.meta.url)),
+        'ant-mobile-vue': fileURLToPath(new URL('../../src', import.meta.url))
       }
     }
   },
@@ -78,7 +79,8 @@ export default defineConfig({
             {
               text: '表单',
               items: [
-                { text: 'Input 输入框', link: '/zh/components/input' }
+                { text: 'Input 输入框', link: '/zh/components/input' },
+                { text: 'TextArea 文本域', link: '/zh/components/text-area' }
               ]
             },
             {
@@ -164,7 +166,8 @@ export default defineConfig({
             {
               text: 'Form',
               items: [
-                { text: 'Input', link: '/en/components/input' }
+                { text: 'Input', link: '/en/components/input' },
+                { text: 'TextArea', link: '/en/components/text-area' }
               ]
             },
             {

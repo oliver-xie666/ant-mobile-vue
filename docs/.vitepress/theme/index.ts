@@ -15,6 +15,7 @@ import Mask from '../../../src/components/mask/Mask.vue'
 import CenterPopup from '../../../src/components/center-popup/CenterPopup.vue'
 import Dialog from '../../../src/components/dialog'
 import Input from '../../../src/components/input/Input.vue'
+import TextArea from '../../../src/components/text-area/TextArea.vue'
 import Modal from '../../../src/components/modal'
 import Toast from '../../../src/components/toast'
 
@@ -73,6 +74,7 @@ export default {
     app.component('CenterPopup', CenterPopup)
     app.component('Dialog', Dialog)
     app.component('Input', Input)
+    app.component('TextArea', TextArea)
     app.component('Modal', Modal)
 
     // Toast、Dialog 和 Modal 是指令式API，添加到全局属性
