@@ -16,14 +16,34 @@
       "types": "./lib/index.d.ts"
     },
     "./lib/*": "./lib/*",
+    "./lib/auto-center": {
+      "import": "./lib/auto-center/index.js",
+      "require": "./lib/auto-center/index.js",
+      "types": "./lib/auto-center/index.d.ts"
+    },
     "./lib/button": {
       "import": "./lib/button/index.js",
       "require": "./lib/button/index.js",
       "types": "./lib/button/index.d.ts"
     },
+    "./lib/center-popup": {
+      "import": "./lib/center-popup/index.js",
+      "require": "./lib/center-popup/index.js",
+      "types": "./lib/center-popup/index.d.ts"
+    },
+    "./lib/config-provider": {
+      "import": "./lib/config-provider/index.js",
+      "require": "./lib/config-provider/index.js",
+      "types": "./lib/config-provider/index.d.ts"
+    },
+    "./lib/dialog": {
+      "import": "./lib/dialog/index.js",
+      "require": "./lib/dialog/index.js",
+      "types": "./lib/dialog/index.d.ts"
+    },
     "./lib/dot-loading": {
       "import": "./lib/dot-loading/index.js",
-      "require": "./lib/dot-loading/index.js", 
+      "require": "./lib/dot-loading/index.js",
       "types": "./lib/dot-loading/index.d.ts"
     },
     "./lib/divider": {
@@ -31,15 +51,40 @@
       "require": "./lib/divider/index.js",
       "types": "./lib/divider/index.d.ts"
     },
+    "./lib/input": {
+      "import": "./lib/input/index.js",
+      "require": "./lib/input/index.js",
+      "types": "./lib/input/index.d.ts"
+    },
+    "./lib/mask": {
+      "import": "./lib/mask/index.js",
+      "require": "./lib/mask/index.js",
+      "types": "./lib/mask/index.d.ts"
+    },
+    "./lib/modal": {
+      "import": "./lib/modal/index.js",
+      "require": "./lib/modal/index.js",
+      "types": "./lib/modal/index.d.ts"
+    },
     "./lib/space": {
       "import": "./lib/space/index.js",
       "require": "./lib/space/index.js",
       "types": "./lib/space/index.d.ts"
     },
+    "./lib/spin-loading": {
+      "import": "./lib/spin-loading/index.js",
+      "require": "./lib/spin-loading/index.js",
+      "types": "./lib/spin-loading/index.d.ts"
+    },
     "./lib/tag": {
       "import": "./lib/tag/index.js",
       "require": "./lib/tag/index.js",
       "types": "./lib/tag/index.d.ts"
+    },
+    "./lib/toast": {
+      "import": "./lib/toast/index.js",
+      "require": "./lib/toast/index.js",
+      "types": "./lib/toast/index.d.ts"
     },
     "./lib/*/index.css": "./lib/*/index.css"
   },
@@ -58,13 +103,14 @@
     "type-check": "vue-tsc --build",
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
     "lint:eslint": "eslint . --fix",
-    "lint:style": "echo \"Stylelint temporarily disabled\"",
+    "lint:style": "stylelint \"src/**/*.{css,less,vue}\" --fix",
     "lint": "run-s lint:*",
     "format": "prettier --write .",
     "prepare": "husky",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "generate:exports": "node scripts/generate-exports.js"
   },
   "dependencies": {
     "highlight.js": "^11.11.1",

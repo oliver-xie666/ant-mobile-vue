@@ -141,7 +141,7 @@ const maskStyle = computed((): CSSProperties => ({
     overflow: auto;
     color: white;
     word-break: break-all;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgb(0 0 0 / 70%);
     border-radius: 8px;
     pointer-events: all;
     font-size: var(--adm-font-size-7);
@@ -173,6 +173,7 @@ const maskStyle = computed((): CSSProperties => ({
   .adm-spin-loading {
     --size: 48px;
     --color: white;
+
     margin: 0 auto 8px;
   }
 }

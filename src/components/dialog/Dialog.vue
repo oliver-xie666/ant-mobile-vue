@@ -120,9 +120,10 @@ const handleAction = async (action: Action, index: number) => {
 
   emit('action', action, index)
 
-  if (props.closeOnAction) {
-    // 直接调用onClose，不通过handleClose避免重复事件处理
+  // 如果action key是'close'或者closeOnAction为true，则发射close事件
+  if (action.key === 'close' || props.closeOnAction) {
     props.onClose?.()
+    emit('close')
     emit('update:visible', false)
   }
 }

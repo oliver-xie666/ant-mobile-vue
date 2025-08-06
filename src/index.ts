@@ -15,6 +15,7 @@ export { default as Space } from './components/space'
 export { default as SpinLoading } from './components/spin-loading'
 export { default as Tag } from './components/tag'
 export { default as Toast } from './components/toast'
+export { default as ConfigProvider } from './components/config-provider'
 
 // 类型导出
 export type { AutoCenterProps } from './components/auto-center/types'
@@ -30,6 +31,7 @@ export type { SpaceProps } from './components/space/types'
 export type { SpinLoadingProps } from './components/spin-loading/types'
 export type { TagProps } from './components/tag/types'
 export type { ToastProps, ToastShowProps, ToastHandler } from './components/toast/types'
+export type { ConfigProviderProps, Config } from './components/config-provider/types'
 
 // 导出工具函数
 export * from './utils/native-props'
@@ -67,8 +69,9 @@ import Modal from './components/modal'
 import Space from './components/space'
 import SpinLoading from './components/spin-loading'
 import Tag from './components/tag'
+import ConfigProvider from './components/config-provider'
 
-const components = [AutoCenter, Button, CenterPopup, Dialog, DotLoading, Divider, Input, Mask, Modal, Space, SpinLoading, Tag]
+const components = [AutoCenter, Button, CenterPopup, Dialog, DotLoading, Divider, Input, Mask, Modal, Space, SpinLoading, Tag, ConfigProvider]
 
 export const install = (app: App): App => {
   components.forEach(component => {

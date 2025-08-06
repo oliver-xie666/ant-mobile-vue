@@ -107,7 +107,10 @@ export function show(p: ToastShowProps | string): ToastHandler {
   // 返回控制器
   return {
     close: () => {
-      clear()
+      // 直接调用afterClose回调
+      props.afterClose?.()
+      // 立即清理，确保DOM被移除
+      cleanup()
     },
   }
 }

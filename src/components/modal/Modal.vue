@@ -23,7 +23,7 @@
     :forceRender="forceRender"
   >
     <div v-if="image" class="adm-modal-image-container">
-      <img :src="image" alt="modal header image" style="width: 100%" />
+      <img :src="image" alt="modal header image" class="adm-modal-image" />
     </div>
 
     <div v-if="header" class="adm-modal-header">

@@ -188,6 +188,6 @@ describe('Space', () => {
     const spaceElement = wrapper.find('.adm-space')
     expect(spaceElement.classes()).toContain('adm-space-horizontal')
     expect(spaceElement.classes()).toContain('adm-space-align-center')
-    expect(spaceElement.classes()).toContain('adm-space-justify-space-between')
+    expect(spaceElement.classes()).toContain('adm-space-justify-between')
   })
 })

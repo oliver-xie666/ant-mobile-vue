@@ -14,7 +14,7 @@
         :style="[maskStyle, $attrs.style].filter(Boolean) as any[]"
         aria-hidden="true"
         @click="handleMaskClick"
-        v-bind="stopPropagationHandlers"
+        v-bind="{ ...stopPropagationHandlers, ...$attrs }"
       >
         <!-- 辅助功能按钮 -->
         <div

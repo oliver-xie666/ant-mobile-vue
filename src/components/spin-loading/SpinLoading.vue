@@ -88,7 +88,7 @@ const animate = () => {
 
 onMounted(() => {
   // 检查用户是否偏好减少动画
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const prefersReducedMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false
   if (!prefersReducedMotion) {
     animate()
   }
@@ -126,6 +126,7 @@ onUnmounted(() => {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

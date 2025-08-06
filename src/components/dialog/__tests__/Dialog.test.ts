@@ -63,7 +63,8 @@ describe('Dialog', () => {
     const button = wrapper.find('.adm-dialog-button')
     await button.trigger('click')
 
-    expect(wrapper.emitted('close')).toBeTruthy()
+    // 检查事件是否被触发
+    expect(wrapper.emitted('close')).toBeDefined()
   })
 
   it('should handle action clicks', async () => {
